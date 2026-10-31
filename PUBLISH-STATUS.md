@@ -6,3 +6,6 @@
 ## 0.1.0-alpha.1 — playbook check (2026-10-31)
 
 - Added `legal.playbook_check`; MIT NDA sample test; 4 S1 gate rows unchanged.
+
+### latest moved
+- `latest`/`next` verified alpha.1 after propagation.
