@@ -9,3 +9,7 @@
 
 ### latest moved
 - `latest`/`next` verified alpha.1 after propagation.
+
+## 0.1.0-alpha.2 — custom playbooks (2026-10-31)
+
+- Added `legal.playbook_register` versioned custom keys; `legal.playbook_check` accepts version; 5 gate rows.

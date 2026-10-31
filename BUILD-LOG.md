@@ -7,3 +7,7 @@
 ### alpha.1 — playbook check
 
 - Added `legal.playbook_check`; public NDA sample test.
+
+### alpha.2 — custom playbooks
+
+- Added versioned playbook registration; tests 4/4; gate 5 rows.

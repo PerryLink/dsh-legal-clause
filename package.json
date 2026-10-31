@@ -1,6 +1,6 @@
 {
   "name": "@perrylink/dsh-legal-clause",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0-alpha.2",
   "description": "Legal clause tree, playbook mapping and unresolved report (SKU-10 S1 public/synthetic demo).",
   "type": "module",
   "main": "./lib/plugin/index.js",

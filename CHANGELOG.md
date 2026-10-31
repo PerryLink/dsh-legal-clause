@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.0-alpha.2 — 2026-10-31
+
+- Added versioned custom playbooks (`legal.playbook_register`); 5 gate rows.
+
 ## 0.1.0-alpha.1 — 2026-10-31
 
 - Added `legal.playbook_check` (present/missing/coverage) using the MIT NDA sample.
