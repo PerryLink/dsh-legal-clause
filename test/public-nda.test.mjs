@@ -19,3 +19,14 @@ test('public MIT NDA clause tree', async () => {
   const result = await tree.execute({ contract_text: text, contract_id: 'public-nda' }, { callId: 'public-nda' })
   assert.ok(result.clauses >= 5)
 })
+
+test('public MIT NDA playbook check', async () => {
+  const text = readFileSync(path.resolve(process.cwd(), 'fixtures/public/mit/sample_nda.txt'), 'utf8')
+  const tools = createTools({ contracts: new T(), baseDir: '/tmp/legal-clause-public' })
+  const by = Object.fromEntries(tools.map((tool) => [tool.name, tool]))
+  const tree = await by['legal.clause_tree'].execute({ contract_text: text, contract_id: 'public-nda-2' }, { callId: 'nda' })
+  const check = await by['legal.playbook_check'].execute({ contract_id: tree.contract_id }, { callId: 'nda' })
+  assert.ok(check.present.includes('confidentiality'))
+  assert.ok(check.present.includes('governing_law'))
+  assert.ok(check.missing.length > 0)
+})
