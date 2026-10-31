@@ -1,4 +1,4 @@
-# @perrylink/dsh-legal-clause
+# dsh-legal-clause
 
 Legal clause tree, 12-key playbook mapping and unresolved report for DeepSeek Harness.
 
@@ -7,7 +7,7 @@ Legal clause tree, 12-key playbook mapping and unresolved report for DeepSeek Ha
 ## Install
 
 ```sh
-dsh plugin --profile <profile> add @perrylink/dsh-legal-clause
+dsh plugin --profile <profile> add dsh-legal-clause
 dsh --profile <profile> --dump-config | grep dsh-legal-clause
 ```
 
@@ -16,7 +16,7 @@ Requires DSH `>=0.2.1-rc.3 <0.3.0` and Node `>=24.9 <25`.
 <details>
 <summary>中文摘要</summary>
 
-合同条款树、playbook 映射与未解决报告。 安装：`dsh plugin --profile <profile> add @perrylink/dsh-legal-clause`。公开/合成、alpha、非 GA。
+合同条款树、playbook 映射与未解决报告。 安装：`dsh plugin --profile <profile> add dsh-legal-clause`。公开/合成、alpha、非 GA。
 
 </details>
 
