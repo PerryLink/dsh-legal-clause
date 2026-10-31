@@ -1,5 +1,5 @@
 req_id,metric,threshold,actual,script,evidence_sha256,pass
-SKU-10-A01,合同条款树（20）,20/20,20,scripts/acceptance.mjs,58cde7cba9d8eaa989f5711074388ca6096b9be13de5d2d22ad1473cd1e801ce,true
-SKU-10-A02,条款映射,240,240,scripts/acceptance.mjs,58cde7cba9d8eaa989f5711074388ca6096b9be13de5d2d22ad1473cd1e801ce,true
-SKU-10-A03,未映射,0,0,scripts/acceptance.mjs,58cde7cba9d8eaa989f5711074388ca6096b9be13de5d2d22ad1473cd1e801ce,true
-SKU-10-A04,JSON 导出,20,20,scripts/acceptance.mjs,58cde7cba9d8eaa989f5711074388ca6096b9be13de5d2d22ad1473cd1e801ce,true
+SKU-10-A01,合同条款树（20）,20/20,20,scripts/acceptance.mjs,dfcc7d32fc5fb4ec4c38b1a6fd0249cbdda1fd15ba728e60a7fa6dcd79525e4e,true
+SKU-10-A02,条款映射,240,240,scripts/acceptance.mjs,dfcc7d32fc5fb4ec4c38b1a6fd0249cbdda1fd15ba728e60a7fa6dcd79525e4e,true
+SKU-10-A03,未映射,0,0,scripts/acceptance.mjs,dfcc7d32fc5fb4ec4c38b1a6fd0249cbdda1fd15ba728e60a7fa6dcd79525e4e,true
+SKU-10-A04,JSON 导出,20,20,scripts/acceptance.mjs,dfcc7d32fc5fb4ec4c38b1a6fd0249cbdda1fd15ba728e60a7fa6dcd79525e4e,true
