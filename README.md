@@ -1,28 +1,55 @@
+<div align="center">
+
 # dsh-legal-clause
 
-Legal clause tree, 12-key playbook mapping and unresolved report for DeepSeek Harness.
+[![npm](https://img.shields.io/npm/v/dsh-legal-clause)](https://www.npmjs.com/package/dsh-legal-clause)
+[![CI](https://github.com/PerryLink/dsh-legal-clause/actions/workflows/ci.yml/badge.svg)](https://github.com/PerryLink/dsh-legal-clause/actions)
+[![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
+[![dsh-plugin](https://img.shields.io/badge/dsh--plugin-%E2%9C%93-green)](https://github.com/topics/dsh-plugin)
+[![docs](https://img.shields.io/badge/docs-domain%20index-0b5fff)](https://perrylink.github.io/dsh-plugins/)
 
-> **Status: alpha / public-synthetic / partial / not counted / not GA.** No customer evidence, customer data, or production-readiness claim. All acceptance rows are `counted=false`.
+**Legal clause tree, 12-key playbook mapping and unresolved report.**
+
+> **Status: alpha / public-synthetic / partial / not counted / not GA.** No customer evidence, customer data, or production-readiness claim.
+
+[English](README.md) · [简体中文](README-zh.md) · [Español](README-es.md) · [Português](README-pt.md) · [हिन्दी](README-hi.md)
+
+```sh
+dsh plugin --profile <profile> add dsh-legal-clause
+```
+
+</div>
+
+![Workflow diagram for dsh-legal-clause: local input, plugin, local output.](docs/assets/dsh-legal-clause-flow.svg)
+
+*Workflow: local input → plugin → local output. No model call is required.*
 
 ## Install
+
+Install and verify:
 
 ```sh
 dsh plugin --profile <profile> add dsh-legal-clause
 dsh --profile <profile> --dump-config | grep dsh-legal-clause
 ```
 
-Requires DSH `>=0.2.1-rc.3 <0.3.0` and Node `>=24.9 <25`.
+Uninstall:
 
-<details>
-<summary>中文摘要</summary>
+```sh
+dsh plugin --profile <profile> remove dsh-legal-clause
+```
 
-合同条款树、playbook 映射与未解决报告。 安装：`dsh plugin --profile <profile> add dsh-legal-clause`。公开/合成、alpha、非 GA。
+## What it does
 
-</details>
+Legal clause tree, 12-key playbook mapping and unresolved report. Runs locally on DeepSeek Harness. The table below is the exact tool surface; the examples use the real command surface.
+
+Input and output stay local; nothing is uploaded.
 
 ## Tools
 
-| Tool | What it does | Risk |
+Tool names and descriptions are kept in English to match the runtime output.
+
+| Tool | Purpose | Risk |
 |---|---|---|
 | `legal.playbook` | Load the default 12-key playbook | R0 |
 | `legal.clause_tree` | Build a clause tree from legal text | R1 local write |
@@ -30,33 +57,57 @@ Requires DSH `>=0.2.1-rc.3 <0.3.0` and Node `>=24.9 <25`.
 | `legal.playbook_check` | Compare a stored tree with a playbook and report missing/extra keys | R0 |
 | `legal.export_tree` | Export the clause tree as JSON | R1 local write |
 
-## Input / output
+## Quick start
 
-**Input:** contract text and a playbook (default 12-key or a registered version). **Output:** a clause tree, playbook coverage/unresolved report, and JSON export. This is a review aid, not legal advice.
+```sh
+dsh plugin --profile <profile> add dsh-legal-clause
+dsh --profile <profile> --dump-config | grep dsh-legal-clause
+```
 
-## Configuration
+## Limits
 
-| Env | Default | Meaning |
-|---|---|---|
-| `DSH_CLAUSE_HOME` | `$DSH_HOME/storages/dsh-legal-clause` | local domain and exports |
-
-## Limits / non-claims
-
-- No redline/diff/apply, no contract rewriting, no e-signature, and no Client surface.
-- No legal conclusion or enforceability opinion; outputs are structural checks.
-- MIT NDA sample only; no customer contract.
-- No customer evidence, customer data, or production-readiness claim; all fixtures are public/synthetic.
+- Public/synthetic only; no customer data or customer evidence.
+- Alpha/partial, not counted, no GA or production-readiness claim.
+- No model or network call unless a tool explicitly says so.
+- The exact per-tool boundaries are in the table and `ACCEPTANCE.csv`.
 
 ## Public sample
 
-MIT NDA sample and a public clause-tree test; `ACCEPTANCE.csv` lists 5 public checks.
+Public/synthetic fixtures live in `test/fixtures/`; `ACCEPTANCE.csv` records the public checks with `counted=false`.
 
 ## Development
 
 ```sh
 pnpm install --frozen-lockfile
-pnpm build && pnpm lint && pnpm typecheck && pnpm test && pnpm gate:sku10
+pnpm build && pnpm lint && pnpm typecheck && pnpm test
 ```
+
+## Family
+
+<details>
+<summary>DSH domain plugin family (15 packages + 2 suites)</summary>
+
+| Package | npm |
+|---|---|
+| **[dsh-einvoice](https://github.com/PerryLink/dsh-einvoice)** | [npm](https://www.npmjs.com/package/dsh-einvoice) |
+| **[dsh-docx-redline](https://github.com/PerryLink/dsh-docx-redline)** | [npm](https://www.npmjs.com/package/dsh-docx-redline) |
+| **[dsh-policy-ledger](https://github.com/PerryLink/dsh-policy-ledger)** | [npm](https://www.npmjs.com/package/dsh-policy-ledger) |
+| **[dsh-ghg](https://github.com/PerryLink/dsh-ghg)** | [npm](https://www.npmjs.com/package/dsh-ghg) |
+| **[dsh-bankrec](https://github.com/PerryLink/dsh-bankrec)** | [npm](https://www.npmjs.com/package/dsh-bankrec) |
+| **[dsh-ap-three-way](https://github.com/PerryLink/dsh-ap-three-way)** | [npm](https://www.npmjs.com/package/dsh-ap-three-way) |
+| **[dsh-ifc-qto](https://github.com/PerryLink/dsh-ifc-qto)** | [npm](https://www.npmjs.com/package/dsh-ifc-qto) |
+| **[dsh-qms-capa](https://github.com/PerryLink/dsh-qms-capa)** | [npm](https://www.npmjs.com/package/dsh-qms-capa) |
+| **[dsh-legal-intake](https://github.com/PerryLink/dsh-legal-intake)** | [npm](https://www.npmjs.com/package/dsh-legal-intake) |
+| **[dsh-legal-clause](https://github.com/PerryLink/dsh-legal-clause)** | [npm](https://www.npmjs.com/package/dsh-legal-clause) |
+| **[dsh-freight-audit](https://github.com/PerryLink/dsh-freight-audit)** | [npm](https://www.npmjs.com/package/dsh-freight-audit) |
+| **[dsh-hs-candidate](https://github.com/PerryLink/dsh-hs-candidate)** | [npm](https://www.npmjs.com/package/dsh-hs-candidate) |
+| **[dsh-travel-recon](https://github.com/PerryLink/dsh-travel-recon)** | [npm](https://www.npmjs.com/package/dsh-travel-recon) |
+| **[dsh-pim-lint](https://github.com/PerryLink/dsh-pim-lint)** | [npm](https://www.npmjs.com/package/dsh-pim-lint) |
+| **[dsh-eval-pack](https://github.com/PerryLink/dsh-eval-pack)** | [npm](https://www.npmjs.com/package/dsh-eval-pack) |
+| **[dsh-finops-suite](https://github.com/PerryLink/dsh-finops-suite)** | [npm](https://www.npmjs.com/package/dsh-finops-suite) |
+| **[dsh-contract-suite](https://github.com/PerryLink/dsh-contract-suite)** | [npm](https://www.npmjs.com/package/dsh-contract-suite) |
+
+</details>
 
 ## License
 
