@@ -33,6 +33,10 @@ dsh plugin --profile <profile> add dsh-legal-clause
 
 *Workflow: local input → plugin → local output. No model call is required.*
 
+![Real dsh-legal-clause terminal output](docs/assets/dsh-legal-clause-hero.png)
+
+*Real local test run; no model or network call.*
+
 ## Install
 
 Install and verify:
@@ -87,7 +91,7 @@ dsh --profile <profile> --dump-config | grep dsh-legal-clause
 
 ### Fixture-backed example
 
-Input: [`fixtures/public/mit/sample_nda.txt`](fixtures/public/mit/sample_nda.txt)
+Input: [`fixtures/public/mit/sample_nda.txt`](https://github.com/PerryLink/dsh-legal-clause/blob/main/fixtures/public/mit/sample_nda.txt)
 
 Command: `pnpm test`
 
@@ -137,6 +141,18 @@ pnpm build && pnpm lint && pnpm typecheck && pnpm test
 
 Sibling packages and family indexes: [dsh-legal-intake](https://github.com/PerryLink/dsh-legal-intake) · [dsh-docx-redline](https://github.com/PerryLink/dsh-docx-redline) · [dsh-contract-suite](https://github.com/PerryLink/dsh-contract-suite)
 
+
+### Related checkers
+
+Each entry is a separate package with its own rule pack and version; install only the ones you need.
+
+| Package | Why it is relevant |
+|---|---|
+| [`dsh-contract-stance`](https://github.com/PerryLink/dsh-contract-stance) | Clause stance register for negotiation positions and risk levels. |
+| [`dsh-lawcite-adapter`](https://github.com/PerryLink/dsh-lawcite-adapter) | Citation and legal-document element verification. |
+| [`dsh-evidence-check`](https://github.com/PerryLink/dsh-evidence-check) | Evidence-list completeness for the same matter. |
+
+- [Troubleshooting](TROUBLESHOOTING.md)
 - [Domain index](https://perrylink.github.io/dsh-plugins/)
 - [Checker family](https://perrylink.github.io/zh/checkers/)
 - [Mainline family](https://github.com/PerryLink/dsh-kit)

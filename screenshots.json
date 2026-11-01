@@ -1,0 +1,14 @@
+[
+  {
+    "path": "docs/assets/dsh-legal-clause-hero.png",
+    "kind": "hero",
+    "alt": "dsh-legal-clause terminal output",
+    "caption": "Real dsh-legal-clause local test run; 5 tests passed."
+  },
+  {
+    "path": "docs/assets/dsh-legal-clause-demo.gif",
+    "kind": "demo",
+    "alt": "Animated dsh-legal-clause terminal session",
+    "caption": "The same run, assembled line by line."
+  }
+]

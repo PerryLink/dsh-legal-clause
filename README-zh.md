@@ -33,6 +33,10 @@ dsh plugin --profile <profile> add dsh-legal-clause
 
 *工作流：本地输入 → 插件 → 本地输出；不需要调用模型。*
 
+![Real dsh-legal-clause terminal output](docs/assets/dsh-legal-clause-hero.png)
+
+*本地真实测试运行；不调用模型或网络。*
+
 ## 安装
 
 安装并验证：
@@ -87,7 +91,7 @@ dsh --profile <profile> --dump-config | grep dsh-legal-clause
 
 ### fixture 支撑的示例
 
-输入: [`fixtures/public/mit/sample_nda.txt`](fixtures/public/mit/sample_nda.txt)
+输入: [`fixtures/public/mit/sample_nda.txt`](https://github.com/PerryLink/dsh-legal-clause/blob/main/fixtures/public/mit/sample_nda.txt)
 
 命令: `pnpm test`
 
@@ -137,6 +141,9 @@ pnpm build && pnpm lint && pnpm typecheck && pnpm test
 
 兄弟包与家族索引： [dsh-legal-intake](https://github.com/PerryLink/dsh-legal-intake) · [dsh-docx-redline](https://github.com/PerryLink/dsh-docx-redline) · [dsh-contract-suite](https://github.com/PerryLink/dsh-contract-suite)
 
+相关核查器（英文表）: [Related checkers](README.md#related-checkers).
+
+- [故障排查（英文）](TROUBLESHOOTING.md)
 - [领域索引](https://perrylink.github.io/dsh-plugins/)
 - [Checker 家族](https://perrylink.github.io/zh/checkers/)
 - [主线家族](https://github.com/PerryLink/dsh-kit)
