@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.0-alpha.9] — 2026-11-01
+
+### Added
+
+- `legal.clause_integrity`: contract numbering QA — duplicate clause numbers, missing top-level numbers and out-of-order numbering, with stable issue codes. Read-only. Verified by `node --test test/*.test.mjs` (8/8).
+
 ## [0.1.0-alpha.8] — 2026-11-01
 
 ### Changed

@@ -10,5 +10,11 @@
     "kind": "demo",
     "alt": "Animated dsh-legal-clause terminal session",
     "caption": "The same run, assembled line by line."
+  },
+  {
+    "path": "docs/assets/dsh-legal-clause-capability.png",
+    "kind": "capability",
+    "alt": "dsh-legal-clause real test run",
+    "caption": "Real command: node --test test/clause-integrity.test.mjs — 3 tests passed, 0 failed (clause numbering integrity). Run 2026-11-01; the image is rendered from the captured terminal output."
   }
 ]
