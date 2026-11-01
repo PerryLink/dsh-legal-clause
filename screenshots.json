@@ -16,5 +16,11 @@
     "kind": "capability",
     "alt": "dsh-legal-clause real test run",
     "caption": "Real command: node --test test/clause-integrity.test.mjs — 3 tests passed, 0 failed (clause numbering integrity). Run 2026-11-01; the image is rendered from the captured terminal output."
+  },
+  {
+    "path": "docs/assets/dsh-legal-clause-capability2.png",
+    "kind": "capability",
+    "alt": "dsh-legal-clause second capability run",
+    "caption": "Real command: node --test test/coverage.test.mjs — 3 tests passed, 0 failed (Playbook coverage: mapped, missing and coverage ratio.) Run 2026-11-01; rendered from the captured terminal output."
   }
 ]

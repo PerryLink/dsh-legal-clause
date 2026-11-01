@@ -1,6 +1,6 @@
 {
   "name": "dsh-legal-clause",
-  "version": "0.1.0-alpha.9",
+  "version": "0.1.0-alpha.10",
   "description": "Legal clause tree, 12-key playbook mapping and unresolved report.",
   "type": "module",
   "main": "./lib/plugin/index.js",

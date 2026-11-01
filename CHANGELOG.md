@@ -1,6 +1,12 @@
 # Changelog
 
-## [0.1.0-alpha.9] — 2026-11-01
+## [0.1.0-alpha.10] — 2026-11-01
+
+### Added
+
+- `legal.coverage_check`: coverage against the 12-key playbook — mapped keys, missing keys and the coverage ratio. Read-only; it does not judge clause quality. Verified by `node --test test/*.test.mjs` (11/11).
+
+## [Unreleased]
 
 ### Added
 
