@@ -1,6 +1,11 @@
 # Changelog
 
-## [0.1.0-alpha.10] — 2026-11-01
+## [0.1.0-alpha.11] — 2026-11-01
+
+### Security / Fixes
+
+- Path-traversal guard, bounded clause-number gap detection (a huge clause number no longer expands millions of issues).
+
 
 ### Added
 
