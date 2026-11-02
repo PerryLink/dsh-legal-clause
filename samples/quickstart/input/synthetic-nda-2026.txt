@@ -1,0 +1,55 @@
+SYNTHETIC NON-DISCLOSURE AGREEMENT — SAMPLE DATA, NOT A REAL CONTRACT
+
+This is a synthetic sample created for the dsh-legal-clause quickstart. It contains no
+real party, no real deal and no personal data. All names and numbers are invented.
+
+This Non-Disclosure Agreement is entered into as of 1 March 2026 by and between
+Sample Discloser Ltd. and Sample Recipient Ltd. (together, the "parties").
+
+1. CONFIDENTIALITY
+Each party shall keep the other party's Confidential Information in strict confidence,
+use it only to evaluate the sample collaboration, and disclose it only to employees who
+need to know. The receiving party shall protect the information with reasonable care.
+
+2. LIMITATION OF LIABILITY
+Neither party is liable for indirect or consequential loss arising out of this Agreement.
+The aggregate liability of each party under this Agreement is capped at the fees paid in
+the twelve months before the claim.
+
+3. INDEMNITY
+Each party shall defend and hold harmless the other party from third-party claims that
+arise from its own breach of this Agreement or its own negligent acts.
+
+4. TERM AND TERMINATION
+This Agreement starts on the date above and continues for three years. Either party may
+terminate it for convenience with thirty days written notice. The duties in clause 1
+survive the end of this Agreement.
+
+5. ASSIGNMENT
+Neither party may assign this Agreement, in whole or in part, without the prior written
+consent of the other party, except to an affiliate in the same corporate group.
+
+6. GOVERNING LAW
+This Agreement is governed by the laws of the State of Delaware, without regard to its
+conflict-of-laws rules.
+
+7. DISPUTE RESOLUTION
+The parties shall first try to resolve any dispute by good-faith negotiation. If that
+fails, the dispute goes to binding arbitration seated in Wilmington, Delaware.
+
+8. PAYMENT
+The disclosing party shall pay the sample evaluation fee within thirty days of a valid
+invoice. Late payment carries interest of one percent per month on the outstanding sum.
+
+9. INTELLECTUAL PROPERTY
+Each party keeps all rights in its own pre-existing intellectual property. Nothing in
+this Agreement transfers ownership of any invention, trademark or copyright.
+
+10. WARRANTY
+Each party warrants that it has the right to enter into this Agreement. The information
+is provided "as is" and without any other warranty of any kind.
+
+SIGNATURES (synthetic sample — do not sign)
+
+Sample Discloser Ltd. ______________________  Date: __________
+Sample Recipient Ltd. ______________________  Date: __________

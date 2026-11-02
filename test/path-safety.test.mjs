@@ -12,6 +12,7 @@ const temp = () => mkdtemp(path.join(os.tmpdir(), 'dsh-legal-path-'))
 const code = (expected) => (error) => {
   assert.ok(error instanceof LegalError)
   assert.equal(error.code, expected)
+  assert.match(error.message, /（E_[A-Z_]+）｜下一步：/)
   return true
 }
 

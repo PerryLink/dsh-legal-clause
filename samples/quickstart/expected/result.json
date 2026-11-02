@@ -1,0 +1,28 @@
+{
+  "sample": "samples/quickstart/input/synthetic-nda-2026.txt",
+  "contract_id": "NDA-2026-001",
+  "clauses": 10,
+  "unresolved": 0,
+  "present_keys": [
+    "confidentiality",
+    "liability",
+    "indemnity",
+    "termination",
+    "assignment",
+    "governing_law",
+    "dispute",
+    "payment",
+    "ip",
+    "warranty"
+  ],
+  "missing_keys": [
+    "price_adjustment",
+    "data_protection"
+  ],
+  "coverage": 0.83,
+  "coverage_pct": 83.33,
+  "integrity_issue_codes": [],
+  "export_file": "NDA-2026-001.json",
+  "export_clauses": 10,
+  "export_has_clause_key": true
+}

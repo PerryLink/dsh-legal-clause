@@ -27,6 +27,74 @@ dsh plugin --profile <profile> add dsh-legal-clause
 
 </div>
 
+## 一句话
+
+把一份合同文本拆成条款树，核对 12 项关键条款是否齐全并标出缺失。
+
+## 适合 / 不适合
+
+- **适合**：10–200 条、UTF-8 纯文本的中英文合同；先看条款编号有没有重复/跳号，再看 12 类关键条款缺哪几项。
+- **不适合**：扫描件、PDF、Word 原件（要先转成纯文本）；逐条法律意见或风险评级；把客户合同上传到任何地方（只在你的电脑上算）。
+
+## 输入
+
+- 格式：UTF-8 纯文本 `.txt`，每个条款单独一行、以 `1.`、`2.` 开头；也可以直接粘贴正文。
+- 大小：单份 ≤ 1 MB（自带样例约 3 KB）。
+- 来源：合同系统导出、Word 另存为纯文本，或手工粘贴；原文件不会被修改。
+
+## 输出
+
+- 终端摘要：条款数、未识别条款数、12 项条款命中/缺失、条款编号问题数。
+- 条款树 JSON：写到 `$DSH_HOME/storages/dsh-legal-clause/exports/<合同编号>.json`；原文件不改。
+- 样例金标：`samples/quickstart/expected/result.json`（由真实运行产生）。
+
+## 示例
+
+直接复制下面这句：
+
+> 我有一份 10 条的保密协议文本，帮我拆成条款树，看看 12 项关键条款缺哪几项。
+
+用自带样例复跑并核对金标：
+
+```sh
+node samples/quickstart/run.mjs --check
+```
+
+![dsh-legal-clause quickstart 真实运行输出](docs/assets/quickstart.png)
+
+截图就是上面这条命令的真实输出；金标比对结果见 `samples/quickstart/expected/result.json`。
+
+## 权限
+
+读：用户指定的 UTF-8 纯文本合同；不读其他目录
+写：$DSH_HOME/storages/dsh-legal-clause/exports/；不改原文件
+联网：否
+外部系统：无
+
+写文件的工具是 `legal.clause_tree`、`legal.playbook_register`、`legal.export_tree`，均标 **R1**（本地写）；其余标 **R0**（只读）。
+
+## FAQ
+
+### 1. 装不上怎么办？
+
+确认 Node `>=24.9 <25`、DSH `>=0.2.1-rc.3 <0.4.0`，再执行 `dsh plugin --profile <profile> add dsh-legal-clause`。仍失败先看 `TROUBLESHOOTING.md` 第 1 条。
+
+### 2. 结果不对怎么办？
+
+先跑 `node samples/quickstart/run.mjs --check`：样例通过说明安装没问题，再检查合同是不是每个条款单独一行、以 `1.` 开头。本包只按编号和关键词做静态检查，不判断条款写得好不好。
+
+### 3. 能处理我的文件吗？
+
+能。单份 ≤1 MB 的 UTF-8 纯文本，本地读、本地算，不上传、不联网。PDF/Word 请先转纯文本；客户合同不要贴进 issue。
+
+### 4. 会改我的原文件吗？
+
+不会。只往 `$DSH_HOME/storages/dsh-legal-clause/exports/` 写一份新的 JSON。
+
+## 版本
+
+`0.1.0-alpha.12` · 25 项测试通过（`node --test test/*.test.mjs`）。
+
 > ⭐ 如果它帮到了你，点个 star 会让下一个人更容易找到它；没有任何功能被 star 解锁。
 
 ![Workflow diagram for dsh-legal-clause: local input, plugin, local output.](docs/assets/dsh-legal-clause-flow.svg)
@@ -79,6 +147,8 @@ dsh plugin --profile <profile> remove dsh-legal-clause
 | `legal.playbook_register` | 注册带版本的自定义 playbook 键 | R1 local write |
 | `legal.playbook_check` | 将已保存的条款树与 playbook 比对，报告缺失/多余的键 | R0 |
 | `legal.export_tree` | 将条款树导出为 JSON | R1 local write |
+| `legal.clause_integrity` | 检查条款编号重复/跳号/乱序 | R0 |
+| `legal.coverage_check` | 直接对文本计算 12 项条款覆盖率 | R0 |
 
 ## 快速开始
 
@@ -87,7 +157,7 @@ dsh plugin --profile <profile> add dsh-legal-clause
 dsh --profile <profile> --dump-config | grep dsh-legal-clause
 ```
 
-## 示例
+## 验收证据
 
 ### fixture 支撑的示例
 
@@ -130,7 +200,7 @@ pnpm build && pnpm lint && pnpm typecheck && pnpm test
 | Platforms | All; local files only |
 | 数据 | No network, no model call, no upload |
 
-## 权限与数据
+## 数据边界
 
 - 本地运行；不联网、不调用模型、不上传。
 - 只使用公开/合成 fixture；不含客户数据或客户证据。

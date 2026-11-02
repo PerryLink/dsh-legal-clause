@@ -1,6 +1,6 @@
 {
   "name": "dsh-legal-clause",
-  "version": "0.1.0-alpha.12",
+  "version": "0.1.0-alpha.13",
   "description": "Legal clause tree, 12-key playbook mapping and unresolved report.",
   "type": "module",
   "main": "./lib/plugin/index.js",
@@ -30,11 +30,26 @@
     "CHANGELOG.md",
     "TROUBLESHOOTING.md",
     "screenshots.json",
-    "icon.svg"
+    "icon.svg",
+    "samples"
   ],
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"
+    },
+    "demo": {
+      "sample": "samples/quickstart/input/synthetic-nda-2026.txt",
+      "prompt": "我有一份 10 条的保密协议文本，帮我拆成条款树，看看 12 项关键条款缺哪几项。",
+      "expect": "samples/quickstart/expected/result.json",
+      "screenshot": "docs/assets/quickstart.png",
+      "reads": [
+        "用户指定的纯文本合同（样例：samples/quickstart/input/synthetic-nda-2026.txt）"
+      ],
+      "writes": [
+        "$DSH_HOME/storages/dsh-legal-clause/exports/"
+      ],
+      "network": false,
+      "external": []
     }
   },
   "engines": {
