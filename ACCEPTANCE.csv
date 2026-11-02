@@ -1,8 +1,8 @@
 req_id,metric,threshold,actual,script,evidence_sha256,pass,source,counted
-SKU-10-A01,合同条款树（20）,20/20,20,scripts/acceptance.mjs,1a8d7ee3fff85629f83ae9c362c8f2eb05ffad34072bae8f6a265e596fc242d0,true,public/synthetic,false
-SKU-10-A02,条款映射,240,240,scripts/acceptance.mjs,1a8d7ee3fff85629f83ae9c362c8f2eb05ffad34072bae8f6a265e596fc242d0,true,public/synthetic,false
-SKU-10-A03,未映射,0,0,scripts/acceptance.mjs,1a8d7ee3fff85629f83ae9c362c8f2eb05ffad34072bae8f6a265e596fc242d0,true,public/synthetic,false
-SKU-10-A04,JSON 导出,20,20,scripts/acceptance.mjs,1a8d7ee3fff85629f83ae9c362c8f2eb05ffad34072bae8f6a265e596fc242d0,true,public/synthetic,false
-SKU-10-A05,自定义 playbook v2,1/1,1,scripts/acceptance.mjs,1a8d7ee3fff85629f83ae9c362c8f2eb05ffad34072bae8f6a265e596fc242d0,true,public/synthetic,false
-SKU-10-A06,条款编号完整性,2,2,scripts/acceptance.mjs,1a8d7ee3fff85629f83ae9c362c8f2eb05ffad34072bae8f6a265e596fc242d0,true,public/synthetic,false
-SKU-10-A07,条款覆盖度,16.67,16.67,scripts/acceptance.mjs,1a8d7ee3fff85629f83ae9c362c8f2eb05ffad34072bae8f6a265e596fc242d0,true,public/synthetic,false
+SKU-10-A01,合同条款树（20）,20/20,20,scripts/acceptance.mjs,5adbda6c2299496f204404bac65169b50e051fb8e8878b6c93e743b68fca2802,true,public/synthetic,false
+SKU-10-A02,条款映射,240,240,scripts/acceptance.mjs,5adbda6c2299496f204404bac65169b50e051fb8e8878b6c93e743b68fca2802,true,public/synthetic,false
+SKU-10-A03,未映射,0,0,scripts/acceptance.mjs,5adbda6c2299496f204404bac65169b50e051fb8e8878b6c93e743b68fca2802,true,public/synthetic,false
+SKU-10-A04,JSON 导出,20,20,scripts/acceptance.mjs,5adbda6c2299496f204404bac65169b50e051fb8e8878b6c93e743b68fca2802,true,public/synthetic,false
+SKU-10-A05,自定义 playbook v2,1/1,1,scripts/acceptance.mjs,5adbda6c2299496f204404bac65169b50e051fb8e8878b6c93e743b68fca2802,true,public/synthetic,false
+SKU-10-A06,条款编号完整性,2,2,scripts/acceptance.mjs,5adbda6c2299496f204404bac65169b50e051fb8e8878b6c93e743b68fca2802,true,public/synthetic,false
+SKU-10-A07,条款覆盖度,16.67,16.67,scripts/acceptance.mjs,5adbda6c2299496f204404bac65169b50e051fb8e8878b6c93e743b68fca2802,true,public/synthetic,false
