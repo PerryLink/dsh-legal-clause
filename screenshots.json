@@ -7,6 +7,7 @@
     "command": "node samples/quickstart/run.mjs --check",
     "run_at": "2026-11-02T12:35:05Z",
     "output_sha256": "573c218063308733f534935296c80ce3604fca55d1296525dbcba2631957bd09",
+    "output_path": "samples/quickstart/expected/result.json",
     "log": "docs/assets/quickstart.log",
     "log_sha256": "fd937eced0bdbc5a6591b3d93220cd3495cd7e9d61d995e7c6180170c3534f90",
     "image_sha256": "f4772e46937188ee47115e06be987ca974d3ee9908deff022a31bf7ac6b5c473"

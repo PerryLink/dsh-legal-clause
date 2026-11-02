@@ -1,0 +1,59 @@
+{
+  "run_id": "sku10-1793636422356",
+  "scope": "SKU-10-S1",
+  "status": "partial",
+  "counted": false,
+  "note": "synthetic contracts; user-approved public/synthetic; 0 real contracts",
+  "metrics": [
+    {
+      "i": "SKU-10-A01",
+      "m": "合同条款树（20）",
+      "t": "20/20",
+      "a": 20,
+      "p": true
+    },
+    {
+      "i": "SKU-10-A02",
+      "m": "条款映射",
+      "t": "240",
+      "a": 240,
+      "p": true
+    },
+    {
+      "i": "SKU-10-A03",
+      "m": "未映射",
+      "t": "0",
+      "a": 0,
+      "p": true
+    },
+    {
+      "i": "SKU-10-A04",
+      "m": "JSON 导出",
+      "t": "20",
+      "a": 20,
+      "p": true
+    },
+    {
+      "i": "SKU-10-A05",
+      "m": "自定义 playbook v2",
+      "t": "1/1",
+      "a": 1,
+      "p": true
+    },
+    {
+      "i": "SKU-10-A06",
+      "m": "条款编号完整性",
+      "t": "2",
+      "a": 2,
+      "p": true
+    },
+    {
+      "i": "SKU-10-A07",
+      "m": "条款覆盖度",
+      "t": "16.67",
+      "a": 16.67,
+      "p": true
+    }
+  ],
+  "pass": true
+}
