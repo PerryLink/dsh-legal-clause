@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="660" viewBox="0 0 1100 660" role="img" aria-label="dsh-legal-clause structure: a clause tree spine on the left sends one ribbon per clause to its key in the 12-key playbook deck; price_adjustment and data_protection stay hollow because no clause reached them; R0 read-only checks and R1 local writes close the figure">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0.25" y2="1"><stop offset="0" stop-color="#f9f6fd"/><stop offset="1" stop-color="#e4eaf8"/></linearGradient>
+<filter id="soft" x="-25%" y="-25%" width="150%" height="165%"><feDropShadow dx="0" dy="7" stdDeviation="9" flood-color="#15112a" flood-opacity="0.10"/></filter>
+</defs>
+<rect width="1100" height="660" fill="url(#bg)"/>
+<text x="40" y="52" fill="#141419" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="27" font-weight="700">dsh-legal-clause</text>
+<text x="40" y="80" fill="#4d5261" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="14.5">numbered plain text in → clause tree → best of 12 keys → present / missing → local JSON out</text>
+<rect x="820.0" y="30" width="240.0" height="26" rx="13" fill="#ece7f9"/>
+<text x="832.0" y="38" fill="#4B67B4" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="11">7 tools · R0 ×4 / R1 ×3 · no network</text>
+<rect x="40" y="96" width="1020" height="46" rx="14" fill="#f5f2fb" stroke="#e6e2ef" stroke-width="1.4"/>
+<text x="58" y="111" fill="#4B67B4" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="13" font-weight="700">contract .txt</text>
+<text x="172" y="111" fill="#4d5261" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="12.5">UTF-8 · one clause per line · original untouched</text>
+<text x="516" y="113" fill="#8f94a4" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11">line-leading number</text>
+<text x="636" y="112" fill="#8f94a4" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="11.5">^\s*(\d+(?:\.\d+)*)[.)]?\s+</text>
+<rect x="866.0" y="106" width="174.0" height="26" rx="13" fill="#ece7f9"/>
+<text x="878.0" y="114" fill="#4B67B4" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="10.5">10 clauses · 0 unresolved</text>
+<text x="64" y="158" fill="#4d5261" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="12">clause tree · legal.clause_tree</text>
+<text x="416" y="158" fill="#8f94a4" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="11" text-anchor="middle">title +3 / body +2</text>
+<text x="500" y="158" fill="#4d5261" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="12">12-key playbook · 4 categories</text>
+<text x="760" y="158" fill="#8f94a4" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11">category</text>
+<text x="1040" y="158" fill="#8f94a4" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11" text-anchor="end">present / total</text>
+<line x1="748" y1="170" x2="748" y2="488" stroke="#dcd8ea" stroke-width="1" stroke-dasharray="4 5"/>
+<line x1="89" y1="185.0" x2="89" y2="445.0" stroke="#dcd8ea" stroke-width="2"/>
+<text x="80" y="189.6" fill="#4B67B4" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="12.5" text-anchor="end" font-weight="700">1</text>
+<circle cx="89" cy="185.0" r="3.4" fill="#4B67B4"/>
+<line x1="92.5" y1="185.0" x2="104" y2="185.0" stroke="#4B67B4" stroke-width="1.3"/>
+<text x="110" y="189.8" fill="#141419" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="13">CONFIDENTIALITY</text>
+<line x1="340" y1="185.0" x2="486" y2="185.0" stroke="#b45309" stroke-width="1.5" opacity="0.55"/>
+<path d="M480 180.8L487 185.0L480 189.2" fill="none" stroke="#b45309" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="500" y="174.5" width="133.0" height="21" rx="10.5" fill="#f5f2fb" stroke="#e6e2ef" stroke-width="1"/>
+<rect x="503" y="177.5" width="3" height="15" rx="1.5" fill="#b45309"/>
+<text x="513" y="189.6" fill="#141419" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="13">confidentiality</text>
+<text x="80" y="215.6" fill="#4B67B4" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="12.5" text-anchor="end" font-weight="700">2</text>
+<circle cx="89" cy="211.0" r="3.4" fill="#4B67B4"/>
+<line x1="92.5" y1="211.0" x2="104" y2="211.0" stroke="#4B67B4" stroke-width="1.3"/>
+<text x="110" y="215.8" fill="#141419" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="13">LIMITATION OF LIABILITY</text>
+<line x1="340" y1="211.0" x2="486" y2="211.0" stroke="#b45309" stroke-width="1.5" opacity="0.55"/>
+<path d="M480 206.8L487 211.0L480 215.2" fill="none" stroke="#b45309" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="500" y="200.5" width="91.0" height="21" rx="10.5" fill="#f5f2fb" stroke="#e6e2ef" stroke-width="1"/>
+<rect x="503" y="203.5" width="3" height="15" rx="1.5" fill="#b45309"/>
+<text x="513" y="215.6" fill="#141419" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="13">liability</text>
+<text x="80" y="241.6" fill="#4B67B4" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="12.5" text-anchor="end" font-weight="700">3</text>
+<circle cx="89" cy="237.0" r="3.4" fill="#4B67B4"/>
+<line x1="92.5" y1="237.0" x2="104" y2="237.0" stroke="#4B67B4" stroke-width="1.3"/>
+<text x="110" y="241.8" fill="#141419" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="13">INDEMNITY</text>
+<line x1="340" y1="237.0" x2="486" y2="237.0" stroke="#b45309" stroke-width="1.5" opacity="0.55"/>
+<path d="M480 232.8L487 237.0L480 241.2" fill="none" stroke="#b45309" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="500" y="226.5" width="91.0" height="21" rx="10.5" fill="#f5f2fb" stroke="#e6e2ef" stroke-width="1"/>
+<rect x="503" y="229.5" width="3" height="15" rx="1.5" fill="#b45309"/>
+<text x="513" y="241.6" fill="#141419" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="13">indemnity</text>
+<text x="80" y="267.6" fill="#4B67B4" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="12.5" text-anchor="end" font-weight="700">4</text>
+<circle cx="89" cy="263.0" r="3.4" fill="#4B67B4"/>
+<line x1="92.5" y1="263.0" x2="104" y2="263.0" stroke="#4B67B4" stroke-width="1.3"/>
+<text x="110" y="267.8" fill="#141419" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="13">TERM AND TERMINATION</text>
+<line x1="340" y1="263.0" x2="486" y2="263.0" stroke="#4B67B4" stroke-width="1.5" opacity="0.55"/>
+<path d="M480 258.8L487 263.0L480 267.2" fill="none" stroke="#4B67B4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="500" y="252.5" width="105.0" height="21" rx="10.5" fill="#f5f2fb" stroke="#e6e2ef" stroke-width="1"/>
+<rect x="503" y="255.5" width="3" height="15" rx="1.5" fill="#4B67B4"/>
+<text x="513" y="267.6" fill="#141419" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="13">termination</text>
+<text x="80" y="293.6" fill="#4B67B4" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="12.5" text-anchor="end" font-weight="700">5</text>
+<circle cx="89" cy="289.0" r="3.4" fill="#4B67B4"/>
+<line x1="92.5" y1="289.0" x2="104" y2="289.0" stroke="#4B67B4" stroke-width="1.3"/>
+<text x="110" y="293.8" fill="#141419" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="13">ASSIGNMENT</text>
+<line x1="340" y1="289.0" x2="486" y2="289.0" stroke="#4B67B4" stroke-width="1.5" opacity="0.55"/>
+<path d="M480 284.8L487 289.0L480 293.2" fill="none" stroke="#4B67B4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="500" y="278.5" width="98.0" height="21" rx="10.5" fill="#f5f2fb" stroke="#e6e2ef" stroke-width="1"/>
+<rect x="503" y="281.5" width="3" height="15" rx="1.5" fill="#4B67B4"/>
+<text x="513" y="293.6" fill="#141419" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="13">assignment</text>
+<text x="80" y="319.6" fill="#4B67B4" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="12.5" text-anchor="end" font-weight="700">6</text>
+<circle cx="89" cy="315.0" r="3.4" fill="#4B67B4"/>
+<line x1="92.5" y1="315.0" x2="104" y2="315.0" stroke="#4B67B4" stroke-width="1.3"/>
+<text x="110" y="319.8" fill="#141419" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="13">GOVERNING LAW</text>
+<line x1="340" y1="315.0" x2="486" y2="315.0" stroke="#4B67B4" stroke-width="1.5" opacity="0.55"/>
+<path d="M480 310.8L487 315.0L480 319.2" fill="none" stroke="#4B67B4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="500" y="304.5" width="119.0" height="21" rx="10.5" fill="#f5f2fb" stroke="#e6e2ef" stroke-width="1"/>
+<rect x="503" y="307.5" width="3" height="15" rx="1.5" fill="#4B67B4"/>
+<text x="513" y="319.6" fill="#141419" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="13">governing_law</text>
+<text x="80" y="345.6" fill="#4B67B4" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="12.5" text-anchor="end" font-weight="700">7</text>
+<circle cx="89" cy="341.0" r="3.4" fill="#4B67B4"/>
+<line x1="92.5" y1="341.0" x2="104" y2="341.0" stroke="#4B67B4" stroke-width="1.3"/>
+<text x="110" y="345.8" fill="#141419" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="13">DISPUTE RESOLUTION</text>
+<line x1="340" y1="341.0" x2="486" y2="341.0" stroke="#4B67B4" stroke-width="1.5" opacity="0.55"/>
+<path d="M480 336.8L487 341.0L480 345.2" fill="none" stroke="#4B67B4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="500" y="330.5" width="77.0" height="21" rx="10.5" fill="#f5f2fb" stroke="#e6e2ef" stroke-width="1"/>
+<rect x="503" y="333.5" width="3" height="15" rx="1.5" fill="#4B67B4"/>
+<text x="513" y="345.6" fill="#141419" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="13">dispute</text>
+<text x="80" y="371.6" fill="#4B67B4" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="12.5" text-anchor="end" font-weight="700">8</text>
+<circle cx="89" cy="367.0" r="3.4" fill="#4B67B4"/>
+<line x1="92.5" y1="367.0" x2="104" y2="367.0" stroke="#4B67B4" stroke-width="1.3"/>
+<text x="110" y="371.8" fill="#141419" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="13">PAYMENT</text>
+<line x1="340" y1="367.0" x2="486" y2="367.0" stroke="#0f766e" stroke-width="1.5" opacity="0.55"/>
+<path d="M480 362.8L487 367.0L480 371.2" fill="none" stroke="#0f766e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="500" y="356.5" width="77.0" height="21" rx="10.5" fill="#f5f2fb" stroke="#e6e2ef" stroke-width="1"/>
+<rect x="503" y="359.5" width="3" height="15" rx="1.5" fill="#0f766e"/>
+<text x="513" y="371.6" fill="#141419" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="13">payment</text>
+<line x1="64" y1="393.0" x2="330" y2="393.0" stroke="#dcd8ea" stroke-width="1" stroke-dasharray="3 6" opacity="0.9"/>
+<circle cx="89" cy="393.0" r="3.2" fill="none" stroke="#dcd8ea" stroke-width="1.3"/>
+<rect x="500" y="382.5" width="140.0" height="21" rx="10.5" fill="#fdf3e9" stroke="#b45309" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="513" y="397.6" fill="#b45309" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="13">price_adjustment</text>
+<text x="654.0" y="397.4" fill="#b45309" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11.5">missing</text>
+<text x="80" y="423.6" fill="#4B67B4" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="12.5" text-anchor="end" font-weight="700">9</text>
+<circle cx="89" cy="419.0" r="3.4" fill="#4B67B4"/>
+<line x1="92.5" y1="419.0" x2="104" y2="419.0" stroke="#4B67B4" stroke-width="1.3"/>
+<text x="110" y="423.8" fill="#141419" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="13">INTELLECTUAL PROPERTY</text>
+<line x1="340" y1="419.0" x2="486" y2="419.0" stroke="#0f766e" stroke-width="1.5" opacity="0.55"/>
+<path d="M480 414.8L487 419.0L480 423.2" fill="none" stroke="#0f766e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="500" y="408.5" width="42.0" height="21" rx="10.5" fill="#f5f2fb" stroke="#e6e2ef" stroke-width="1"/>
+<rect x="503" y="411.5" width="3" height="15" rx="1.5" fill="#0f766e"/>
+<text x="513" y="423.6" fill="#141419" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="13">ip</text>
+<text x="80" y="449.6" fill="#4B67B4" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="12.5" text-anchor="end" font-weight="700">10</text>
+<circle cx="89" cy="445.0" r="3.4" fill="#4B67B4"/>
+<line x1="92.5" y1="445.0" x2="104" y2="445.0" stroke="#4B67B4" stroke-width="1.3"/>
+<text x="110" y="449.8" fill="#141419" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="13">WARRANTY</text>
+<line x1="340" y1="445.0" x2="486" y2="445.0" stroke="#7c3aed" stroke-width="1.5" opacity="0.55"/>
+<path d="M480 440.8L487 445.0L480 449.2" fill="none" stroke="#7c3aed" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="500" y="434.5" width="84.0" height="21" rx="10.5" fill="#f5f2fb" stroke="#e6e2ef" stroke-width="1"/>
+<rect x="503" y="437.5" width="3" height="15" rx="1.5" fill="#7c3aed"/>
+<text x="513" y="449.6" fill="#141419" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="13">warranty</text>
+<line x1="64" y1="471.0" x2="330" y2="471.0" stroke="#dcd8ea" stroke-width="1" stroke-dasharray="3 6" opacity="0.9"/>
+<circle cx="89" cy="471.0" r="3.2" fill="none" stroke="#dcd8ea" stroke-width="1.3"/>
+<rect x="500" y="460.5" width="133.0" height="21" rx="10.5" fill="#fdf3e9" stroke="#b45309" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="513" y="475.6" fill="#b45309" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="13">data_protection</text>
+<text x="647.0" y="475.4" fill="#b45309" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11.5">missing</text>
+<circle cx="761" cy="207.0" r="3.2" fill="#b45309"/>
+<text x="772" y="211.5" fill="#141419" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11.5" font-weight="700">risk</text>
+<text x="1040" y="211.5" fill="#4d5261" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="11.5" text-anchor="end">3 / 3</text>
+<rect x="772" y="216.0" width="230" height="6" rx="3" fill="#e7e4f0"/>
+<rect x="772" y="216.0" width="230.0" height="6" rx="3" fill="#b45309"/>
+<circle cx="761" cy="298.0" r="3.2" fill="#4B67B4"/>
+<text x="772" y="302.5" fill="#141419" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11.5" font-weight="700">control</text>
+<text x="1040" y="302.5" fill="#4d5261" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="11.5" text-anchor="end">4 / 4</text>
+<rect x="772" y="307.0" width="230" height="6" rx="3" fill="#e7e4f0"/>
+<rect x="772" y="307.0" width="230.0" height="6" rx="3" fill="#4B67B4"/>
+<circle cx="761" cy="389.0" r="3.2" fill="#0f766e"/>
+<text x="772" y="393.5" fill="#141419" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11.5" font-weight="700">commercial</text>
+<text x="1040" y="393.5" fill="#4d5261" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="11.5" text-anchor="end">2 / 3</text>
+<rect x="772" y="398.0" width="230" height="6" rx="3" fill="#e7e4f0"/>
+<rect x="772" y="398.0" width="153.33333333333334" height="6" rx="3" fill="#0f766e"/>
+<circle cx="761" cy="454.0" r="3.2" fill="#7c3aed"/>
+<text x="772" y="458.5" fill="#141419" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11.5" font-weight="700">performance</text>
+<text x="1040" y="458.5" fill="#4d5261" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="11.5" text-anchor="end">1 / 2</text>
+<rect x="772" y="463.0" width="230" height="6" rx="3" fill="#e7e4f0"/>
+<rect x="772" y="463.0" width="115.0" height="6" rx="3" fill="#7c3aed"/>
+<text x="64" y="500" fill="#8f94a4" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11">one key per clause · best hit wins · no hit → unresolved (explicit, never dropped)</text>
+<rect x="64" y="512" width="480" height="82" rx="16" fill="#ffffff" stroke="#e6e2ef" stroke-width="1.4" filter="url(#soft)"/>
+<text x="80" y="522" fill="#8f94a4" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11">R0 · read-only tools</text>
+<text x="80" y="544" fill="#4d5261" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="11.5">legal.playbook_check → present 10 · missing 2 · coverage 0.83</text>
+<text x="80" y="562" fill="#4d5261" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="11.5">legal.coverage_check → coverage_pct 83.33 · 10 / 12 keys</text>
+<text x="80" y="580" fill="#4d5261" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="11.5">legal.clause_integrity → 0 issues · duplicate / gap / order</text>
+<rect x="556" y="512" width="504" height="82" rx="16" fill="#ffffff" stroke="#e6e2ef" stroke-width="1.4" filter="url(#soft)"/>
+<text x="572" y="522" fill="#8f94a4" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11">R1 · local write tools</text>
+<text x="572" y="544" fill="#4d5261" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="11.5">legal.clause_tree → legal_clause.contracts · 10 clauses</text>
+<text x="572" y="562" fill="#4d5261" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="11.5">legal.playbook_register → legal_clause.playbooks · versioned keys</text>
+<text x="572" y="580" fill="#4d5261" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="11.5">legal.export_tree → exports/NDA-2026-001.json · path + sha256</text>
+<text x="64" y="616" fill="#8f94a4" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11">no network · no model call · originals untouched · top-level clause no &gt; 5000 → one E_CLAUSE_NUMBER_RANGE · alpha / partial · Apache-2.0</text>
+</svg>

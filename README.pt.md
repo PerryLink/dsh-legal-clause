@@ -1,8 +1,8 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-legal-clause-flow-dark.svg">
-  <img src="docs/assets/dsh-legal-clause-flow-light.svg" width="100%" alt="Fluxo de dados do dsh-legal-clause: texto de contrato local → legal.clause_tree divide a árvore de cláusulas e mapeia 12 chaves → domínio de armazenamento legal_clause (contracts / playbooks) → legal.playbook_check / legal.coverage_check / legal.clause_integrity → legal.export_tree grava exports/*.json; sem rede e sem chamada a modelo">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-legal-clause-hero-en-dark.webp">
+  <img src="docs/assets/dsh-legal-clause-hero-en-light.webp" width="100%" alt="Banner do dsh-legal-clause: o nome e duas frases de valor à esquerda; à direita, a árvore de cláusulas — dez nós numerados, cada um com a chave a que foi mapeado — e a faixa de cobertura de 12 casas com 10 chaves preenchidas e as duas chaves ausentes price_adjustment e data_protection vazadas, sem cláusulas sem mapeamento">
 </picture>
 
 # dsh-legal-clause
@@ -41,6 +41,11 @@ O `dsh-legal-clause` transforma um texto plano de contrato em árvore de cláusu
 
 - **Adequado para**: contratos de 10–200 cláusulas em texto plano UTF-8, em chinês ou inglês; verificar primeiro a numeração (duplicatas/saltos) e depois quais das 12 cláusulas-chave faltam; exportar a árvore de cláusulas como JSON para uma etapa seguinte.
 - **Não adequado para**: digitalizações, PDF ou arquivos Word originais (primeiro converta para texto plano); pareceres jurídicos cláusula a cláusula ou avaliações de risco; enviar um contrato de cliente para qualquer lugar (tudo roda na sua máquina).
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-legal-clause-flow-v5-dark.svg">
+  <img src="docs/assets/dsh-legal-clause-flow-v5-light.svg" width="100%" alt="Estrutura do dsh-legal-clause: as dez cláusulas do tronco enviam uma fita para a sua casa de chave no baralho de 12 chaves; price_adjustment e data_protection ficam vazadas porque nenhuma cláusula chegou a elas; a coluna direita pontua risk / control / commercial / performance como present/total; fecham dois carris: R0 só leitura e R1 escrita local">
+</picture>
 
 ## Instalação em três passos
 
@@ -325,9 +330,9 @@ pnpm build && node samples/quickstart/run.mjs --check
 | `fixtures/public/mit/` | Amostra pública de NDA com licença MIT (com LICENSE / SOURCE) |
 | `samples/quickstart/` | NDA sintético, script de execução e arquivo de ouro |
 | `scripts/` | lint, aceitação, gate, checagem de pack e gerador de imagens |
-| `docs/assets/` | SVGs do hero e capturas reais |
+| `docs/assets/` | banner hero, diagrama flow-v5 e capturas reais |
 
-O diagrama de cabeçalho é gerado por [`scripts/gen-readme-assets.py`](scripts/gen-readme-assets.py) (Python; produz `docs/assets/dsh-legal-clause-flow-{light,dark}.svg`) e pode ser reexecutado; `quickstart.png` é um render da saída capturada de `node samples/quickstart/run.mjs --check`.
+As imagens do README são geradas por [`scripts/gen-readme-assets.py`](scripts/gen-readme-assets.py) (Pillow para o banner hero, SVG escrito à mão para o diagrama de estrutura flow-v5) e podem ser reexecutadas; o diagrama de fluxo antigo de uma só pele fica em `docs/assets/` para ligações externas, enquanto os README só referenciam o novo hero e o diagrama flow-v5, cada um em claro e escuro. `quickstart.png` é um render da saída capturada de `node samples/quickstart/run.mjs --check`.
 
 Topics: `deepseek-harness`, `dsh`, `dsh-plugin`, `legal`, `clause`, `contract`, `perrylink`, `playbook`
 

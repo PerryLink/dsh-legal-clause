@@ -1,8 +1,8 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-legal-clause-flow-dark.svg">
-  <img src="docs/assets/dsh-legal-clause-flow-light.svg" width="100%" alt="dsh-legal-clause 数据流：本地合同文本 → legal.clause_tree 按编号拆树并映射 12 键 → legal_clause 存储域（contracts / playbooks）→ legal.playbook_check / legal.coverage_check / legal.clause_integrity 核查 → legal.export_tree 导出 exports/*.json；不联网、不调用模型">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-legal-clause-hero-zh-dark.webp">
+  <img src="docs/assets/dsh-legal-clause-hero-zh-light.webp" width="100%" alt="dsh-legal-clause 配图：左列是插件名与两行价值句；右侧是拆出来的条款树——10 个编号节点各自挂着映射到的键，下面是 12 格覆盖率条（10 格命中、2 格空着）与缺失的 price_adjustment、data_protection 两个键，未映射 0">
 </picture>
 
 # dsh-legal-clause
@@ -41,6 +41,11 @@ dsh plugin --profile <profile> add dsh-legal-clause
 
 - **适合**：10–200 条、UTF-8 纯文本的中英文合同；先看条款编号有没有重复/跳号，再看 12 类关键条款缺哪几项；把条款树导出成 JSON 交给下游。
 - **不适合**：扫描件、PDF、Word 原件（要先转成纯文本）；逐条法律意见或风险评级；把客户合同上传到任何地方（只在你的电脑上算）。
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-legal-clause-flow-v5-dark.svg">
+  <img src="docs/assets/dsh-legal-clause-flow-v5-light.svg" width="100%" alt="dsh-legal-clause 结构图：左侧条款树主干上的 10 条条款，各有一条 ribbon 连到右侧 12 键 playbook 的对应键格；price_adjustment 与 data_protection 两格是空的（没有条款命中），右侧按 risk / control / commercial / performance 四类给出 present/total；底部是 R0 只读核查与 R1 本地写入两条边界轨">
+</picture>
 
 ## 三步上手
 
@@ -325,9 +330,9 @@ pnpm build && node samples/quickstart/run.mjs --check
 | `fixtures/public/mit/` | MIT 许可公开 NDA 样本（含 LICENSE / SOURCE） |
 | `samples/quickstart/` | 合成 NDA、运行脚本与金标 |
 | `scripts/` | lint、验收、gate、pack 校验与配图脚本 |
-| `docs/assets/` | hero SVG 与真实运行截图 |
+| `docs/assets/` | hero 横幅、flow-v5 结构图与真实运行截图 |
 
-开头流程图由 [`scripts/gen-readme-assets.py`](scripts/gen-readme-assets.py) 程序化生成（Python，输出 `docs/assets/dsh-legal-clause-flow-{light,dark}.svg`），可重复执行；`quickstart.png` 是 `node samples/quickstart/run.mjs --check` 捕获输出的渲染。
+开头配图由 [`scripts/gen-readme-assets.py`](scripts/gen-readme-assets.py) 程序化生成——hero 横幅用 Pillow 画、flow-v5 结构图用手写 SVG 画——可重复执行；旧的单版流程图保留在 `docs/assets/` 供外链使用，README 只引用新的 hero 与 flow-v5 结构图（各含深浅双版）；`quickstart.png` 是 `node samples/quickstart/run.mjs --check` 捕获输出的渲染。
 
 Topics：`deepseek-harness`, `dsh`, `dsh-plugin`, `legal`, `clause`, `contract`, `perrylink`, `playbook`
 

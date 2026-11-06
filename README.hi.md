@@ -1,8 +1,8 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-legal-clause-flow-dark.svg">
-  <img src="docs/assets/dsh-legal-clause-flow-light.svg" width="100%" alt="dsh-legal-clause डेटा प्रवाह: स्थानीय अनुबंध टेक्स्ट → legal.clause_tree क्लॉज़-वृक्ष बनाकर 12 कुंजियाँ मैप करता है → legal_clause स्टोरेज डोमेन (contracts / playbooks) → legal.playbook_check / legal.coverage_check / legal.clause_integrity → legal.export_tree से exports/*.json; कोई नेटवर्क नहीं, कोई मॉडल कॉल नहीं">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-legal-clause-hero-en-dark.webp">
+  <img src="docs/assets/dsh-legal-clause-hero-en-light.webp" width="100%" alt="dsh-legal-clause बैनर: बाईं ओर प्लगइन का नाम और दो मूल्य-पंक्तियाँ; दाईं ओर बना क्लॉज़-वृक्ष — दस क्रमांकित नोड, हर एक उस कुंजी के साथ जिस पर वह मैप हुआ — और 12 खानों की कवरेज पट्टी जिसमें 10 कुंजियाँ भरी और price_adjustment व data_protection दो कुंजियाँ खाली हैं, अनमैप्ड 0">
 </picture>
 
 # dsh-legal-clause
@@ -41,6 +41,11 @@ dsh plugin --profile <profile> add dsh-legal-clause
 
 - **इनके लिए उपयुक्त**: 10–200 क्लॉज़ वाले, चीनी या अंग्रेज़ी UTF-8 सादे-टेक्स्ट अनुबंध; पहले क्लॉज़ नंबरिंग में दोहराव/अंतराल देखना, फिर 12 मुख्य क्लॉज़ों में क्या गायब है देखना; क्लॉज़-वृक्ष को JSON के रूप में अगली प्रक्रिया के लिए निर्यात करना।
 - **इनके लिए उपयुक्त नहीं**: स्कैन, PDF या Word की मूल फ़ाइलें (पहले सादे टेक्स्ट में बदलें); क्लॉज़-दर-क्लॉज़ कानूनी सलाह या जोखिम रेटिंग; ग्राहक अनुबंध को कहीं अपलोड करना (सब कुछ आपकी मशीन पर चलता है)।
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-legal-clause-flow-v5-dark.svg">
+  <img src="docs/assets/dsh-legal-clause-flow-v5-light.svg" width="100%" alt="dsh-legal-clause की संरचना: क्लॉज़-वृक्ष की रीढ़ पर दस क्लॉज़ में से हर एक अपनी कुंजी तक एक रिबन भेजता है; price_adjustment और data_protection खाली रहती हैं क्योंकि कोई क्लॉज़ उन तक नहीं पहुँचा; दायाँ स्तंभ risk / control / commercial / performance को present/total के रूप में दिखाता है; नीचे दो सीमा-पट्टियाँ हैं — R0 केवल पढ़ने वाले और R1 स्थानीय लिखने वाले औज़ार">
+</picture>
 
 ## तीन चरणों में शुरुआत
 
@@ -325,9 +330,9 @@ pnpm build && node samples/quickstart/run.mjs --check
 | `fixtures/public/mit/` | MIT लाइसेंस वाला सार्वजनिक NDA नमूना (LICENSE / SOURCE सहित) |
 | `samples/quickstart/` | सिंथेटिक NDA, रन स्क्रिप्ट और गोल्डन आउटपुट |
 | `scripts/` | lint, स्वीकृति, gate, pack जाँच और चित्र जनरेटर |
-| `docs/assets/` | हीरो SVG और वास्तविक रन कैप्चर |
+| `docs/assets/` | हीरो बैनर, flow-v5 संरचना चित्र और वास्तविक रन कैप्चर |
 
-हीरो आरेख [`scripts/gen-readme-assets.py`](scripts/gen-readme-assets.py) से प्रोग्रामैटिक रूप से बनता है (Python; `docs/assets/dsh-legal-clause-flow-{light,dark}.svg` आउटपुट) और दोबारा चलाया जा सकता है; `quickstart.png` कैप्चर किए गए `node samples/quickstart/run.mjs --check` आउटपुट का रेंडर है।
+README की छवियाँ [`scripts/gen-readme-assets.py`](scripts/gen-readme-assets.py) से बनती हैं (hero बैनर के लिए Pillow, flow-v5 संरचना चित्र के लिए हाथ से लिखा SVG) और दोबारा चलाई जा सकती हैं; पुराना एकल-स्किन फ़्लो चित्र बाहरी लिंक के लिए `docs/assets/` में रहता है, जबकि README केवल नए hero और flow-v5 संरचना चित्र को संदर्भित करते हैं, दोनों हल्के और गहरे रूप में। `quickstart.png` कैप्चर किए गए `node samples/quickstart/run.mjs --check` आउटपुट का रेंडर है।
 
 Topics: `deepseek-harness`, `dsh`, `dsh-plugin`, `legal`, `clause`, `contract`, `perrylink`, `playbook`
 
