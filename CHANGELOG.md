@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.2.1] — 2026-11-13
+
+### Changed
+
+- Dev dependencies: bump `@deepseek-ai/schemastery` from 3.18.5 to 3.19.0 (#8). No runtime API change.
+
 ## [0.2.0] — 2026-11-13
 
 ### Breaking
