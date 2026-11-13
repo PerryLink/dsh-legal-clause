@@ -15,7 +15,7 @@ const full = [
 ].map(([title, body], i) => `${i + 1}. ${title}\n${body}.`).join('\n')
 
 test('a two-clause contract reports the ten missing keys', async () => {
-  const r = await tools['legal.coverage_check'].execute({ text: twoClauses }, exec)
+  const r = await tools['legal_coverage_check'].execute({ text: twoClauses }, exec)
   assert.equal(r.clauses, 2)
   assert.equal(r.mapped_keys.length, 2)
   assert.equal(r.missing_keys.length, 10)
@@ -23,13 +23,13 @@ test('a two-clause contract reports the ten missing keys', async () => {
 })
 
 test('a full playbook contract reaches full coverage', async () => {
-  const r = await tools['legal.coverage_check'].execute({ text: full }, exec)
+  const r = await tools['legal_coverage_check'].execute({ text: full }, exec)
   assert.equal(r.clauses, 12)
   assert.deepEqual(r.missing_keys, [])
   assert.equal(r.coverage_pct, 100)
 })
 
 test('coverage is a ratio over the twelve playbook keys', async () => {
-  const r = await tools['legal.coverage_check'].execute({ text: twoClauses }, exec)
+  const r = await tools['legal_coverage_check'].execute({ text: twoClauses }, exec)
   assert.equal(r.mapped_keys.length + r.missing_keys.length, 12)
 })

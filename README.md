@@ -90,12 +90,12 @@ dsh plugin --profile <profile> add dsh-legal-clause
 
 ## 核心能力
 
-- **按编号拆树** —— `legal.clause_tree` 用行首阿拉伯数字编号（`1.`、`1.2`、`1)`，编号后需有空格）切分条款，续行并入上一条；一个编号都没有时以 `E_CLAUSE_TREE_INVALID` 失败关闭。返回条款数、未映射数与覆盖率，并把结果存进 `legal_clause` 域的 `contracts` 表。
+- **按编号拆树** —— `legal_clause_tree` 用行首阿拉伯数字编号（`1.`、`1.2`、`1)`，编号后需有空格）切分条款，续行并入上一条；一个编号都没有时以 `E_CLAUSE_TREE_INVALID` 失败关闭。返回条款数、未映射数与覆盖率，并把结果存进 `legal_clause` 域的 `contracts` 表。
 - **12 键映射** —— 每条条款按「标题命中权重更高、正文命中权重较低」打分，映射到 12 个键之一；匹配不上就显式标 `unresolved`，不隐藏、不丢弃。
-- **覆盖与缺口** —— `legal.playbook_check` 对已保存的树报告 present / missing 与 coverage；`legal.coverage_check` 直接对一段文本算 12 键覆盖百分比。两者都只数「键是否出现」，不判断条款写得好不好。
-- **编号完整性** —— `legal.clause_integrity` 报告重复编号、顶级编号跳号、乱序三类问题；顶级编号超过 5000 时只报一条 `E_CLAUSE_NUMBER_RANGE`，不展开逐号扫描。
-- **自定义 playbook** —— `legal.playbook_register` 注册带版本号的自定义键集合（键必须非空且不重复），`legal.playbook_check` 传 `version` 时按它比对；内置 playbook 不被改动。
-- **受限导出** —— `legal.export_tree` 把已保存的树写成 JSON 到存储的 `exports/<contract_id>.json`，返回路径与 `sha256`；文件名必须匹配 `[A-Za-z0-9._-]{1,120}`，不允许 `/`、空格或中文。
+- **覆盖与缺口** —— `legal_playbook_check` 对已保存的树报告 present / missing 与 coverage；`legal_coverage_check` 直接对一段文本算 12 键覆盖百分比。两者都只数「键是否出现」，不判断条款写得好不好。
+- **编号完整性** —— `legal_clause_integrity` 报告重复编号、顶级编号跳号、乱序三类问题；顶级编号超过 5000 时只报一条 `E_CLAUSE_NUMBER_RANGE`，不展开逐号扫描。
+- **自定义 playbook** —— `legal_playbook_register` 注册带版本号的自定义键集合（键必须非空且不重复），`legal_playbook_check` 传 `version` 时按它比对；内置 playbook 不被改动。
+- **受限导出** —— `legal_export_tree` 把已保存的树写成 JSON 到存储的 `exports/<contract_id>.json`，返回路径与 `sha256`；文件名必须匹配 `[A-Za-z0-9._-]{1,120}`，不允许 `/`、空格或中文。
 - **纯本地** —— 源码没有 HTTP / DNS / WebSocket 调用；不联网、不调用模型、不上传，原文件不会被修改。
 
 ### 工具面
@@ -104,13 +104,13 @@ dsh plugin --profile <profile> add dsh-legal-clause
 
 | 工具 | 用途 | 风险 |
 |---|---|---|
-| `legal.playbook` | 返回内置的 12 键 playbook（4 个类别） | R0 只读 |
-| `legal.clause_tree` | 按编号解析合同文本、映射 12 键并保存条款树 | R1 本地写（存储域） |
-| `legal.playbook_register` | 注册带版本号的自定义 playbook 键集合；不覆盖内置 playbook | R1 本地写（存储域） |
-| `legal.playbook_check` | 用内置或指定版本的 playbook 比对已保存的树，报告 present / missing / coverage | R0 只读 |
-| `legal.export_tree` | 把已保存的条款树导出为 JSON 文件，返回路径与 `sha256` | R1 本地写 |
-| `legal.clause_integrity` | 检查条款编号重复、顶级编号跳号与乱序 | R0 只读 |
-| `legal.coverage_check` | 直接对文本计算 12 键覆盖率，不写任何状态 | R0 只读 |
+| `legal_playbook` | 返回内置的 12 键 playbook（4 个类别） | R0 只读 |
+| `legal_clause_tree` | 按编号解析合同文本、映射 12 键并保存条款树 | R1 本地写（存储域） |
+| `legal_playbook_register` | 注册带版本号的自定义 playbook 键集合；不覆盖内置 playbook | R1 本地写（存储域） |
+| `legal_playbook_check` | 用内置或指定版本的 playbook 比对已保存的树，报告 present / missing / coverage | R0 只读 |
+| `legal_export_tree` | 把已保存的条款树导出为 JSON 文件，返回路径与 `sha256` | R1 本地写 |
+| `legal_clause_integrity` | 检查条款编号重复、顶级编号跳号与乱序 | R0 只读 |
+| `legal_coverage_check` | 直接对文本计算 12 键覆盖率，不写任何状态 | R0 只读 |
 
 ### 输入与输出
 
@@ -185,7 +185,7 @@ fixture 示例：输入 [`fixtures/public/mit/sample_nda.txt`](https://github.co
 ```
 
 - 插件 `inject = ['tools', 'storageDomain']`：两个服务都必须在场，插件才会挂载；缺 `storageDomain` 时不会静默降级。
-- 工具注册在 `ctx.tools`；`legal.clause_tree` 与 `legal.playbook_register` 写存储域，`legal.export_tree` 另写 `exports/`，其余四个工具只读。
+- 工具注册在 `ctx.tools`；`legal_clause_tree` 与 `legal_playbook_register` 写存储域，`legal_export_tree` 另写 `exports/`，其余四个工具只读。
 - 存储域 `legal_clause`（版本 1）两张表：`contracts` 存条款树记录、`playbooks` 存自定义 playbook；域关闭注册为 Cordis effect，停止或热重载即撤销。
 
 内置 12 键 playbook：
@@ -226,7 +226,7 @@ fixture 示例：输入 [`fixtures/public/mit/sample_nda.txt`](https://github.co
 <details>
 <summary>条款没识别出来、结果不对怎么办？</summary>
 
-先跑 `node samples/quickstart/run.mjs --check`：样例通过说明安装没问题，再检查合同是不是每个条款单独一行、以阿拉伯数字编号开头。映射是静态关键词匹配（标题权重高于正文），不是语义理解：中英文关键词都能命中，但换了说法就可能落到 `unresolved`。先用 `legal.coverage_check` 看缺哪几项，再用 `legal.playbook_register` 注册自己的键集合。
+先跑 `node samples/quickstart/run.mjs --check`：样例通过说明安装没问题，再检查合同是不是每个条款单独一行、以阿拉伯数字编号开头。映射是静态关键词匹配（标题权重高于正文），不是语义理解：中英文关键词都能命中，但换了说法就可能落到 `unresolved`。先用 `legal_coverage_check` 看缺哪几项，再用 `legal_playbook_register` 注册自己的键集合。
 
 </details>
 
@@ -240,7 +240,7 @@ fixture 示例：输入 [`fixtures/public/mit/sample_nda.txt`](https://github.co
 <details>
 <summary>自定义 playbook 会覆盖内置的 12 键吗？</summary>
 
-不会。`legal.playbook_register` 按版本号写进 `playbooks` 表，内置 playbook 保持只读；`legal.playbook_check` 不带 `version` 时用内置 12 键，带 `version` 时用该版本。版本不存在会报 `E_PLAYBOOK_NOT_FOUND`，键为空或重复会报 `E_PLAYBOOK_INVALID`。
+不会。`legal_playbook_register` 按版本号写进 `playbooks` 表，内置 playbook 保持只读；`legal_playbook_check` 不带 `version` 时用内置 12 键，带 `version` 时用该版本。版本不存在会报 `E_PLAYBOOK_NOT_FOUND`，键为空或重复会报 `E_PLAYBOOK_INVALID`。
 
 </details>
 

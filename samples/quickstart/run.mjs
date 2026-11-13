@@ -36,13 +36,13 @@ async function run() {
     const byName = Object.fromEntries(tools.map((tool) => [tool.name, tool]))
     const call = { callId: 'quickstart' }
 
-    const tree = await byName['legal.clause_tree'].execute(
+    const tree = await byName['legal_clause_tree'].execute(
       { contract_text: contractText, contract_id: 'NDA-2026-001' }, call,
     )
-    const playbook = await byName['legal.playbook_check'].execute({ contract_id: 'NDA-2026-001' }, call)
-    const integrity = await byName['legal.clause_integrity'].execute({ text: contractText }, call)
-    const coverage = await byName['legal.coverage_check'].execute({ text: contractText }, call)
-    const exported = await byName['legal.export_tree'].execute({ contract_id: 'NDA-2026-001' }, call)
+    const playbook = await byName['legal_playbook_check'].execute({ contract_id: 'NDA-2026-001' }, call)
+    const integrity = await byName['legal_clause_integrity'].execute({ text: contractText }, call)
+    const coverage = await byName['legal_coverage_check'].execute({ text: contractText }, call)
+    const exported = await byName['legal_export_tree'].execute({ contract_id: 'NDA-2026-001' }, call)
     const exportedJson = JSON.parse(await readFile(exported.path, 'utf8'))
 
     return {

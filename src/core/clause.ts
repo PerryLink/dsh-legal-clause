@@ -4,9 +4,9 @@ const CLAUSE_HUMAN:Record<ClauseErrorCode,{text:string;next:string}>={
  E_CLAUSE_EMPTY:{text:'合同文本是空的，没有任何条款可以拆',next:'粘贴或选择一份带“1.”“2.”编号的纯文本合同'},
  E_CLAUSE_TREE_INVALID:{text:'这段文本里找不到“1.”这种条款编号',next:'把每个条款改成单独一行、以“1.”开头再试'},
  E_CLAUSE_EXPORT_FAILED:{text:'条款树导出失败，没有写出 JSON 文件',next:'确认导出目录可写，或换一个合同编号'},
- E_CLAUSE_TREE_NOT_FOUND:{text:'找不到这个合同编号对应的条款树',next:'先用 legal.clause_tree 拆一次，再导出或检查'},
+ E_CLAUSE_TREE_NOT_FOUND:{text:'找不到这个合同编号对应的条款树',next:'先用 legal_clause_tree 拆一次，再导出或检查'},
  E_PLAYBOOK_INVALID:{text:'自定义条款清单是空的，或者里面有重复的键',next:'给每个条款一个不重复的英文键名，至少保留一个'},
- E_PLAYBOOK_NOT_FOUND:{text:'找不到这个版本的自定义条款清单',next:'先用 legal.playbook_register 注册这个版本，再检查'},
+ E_PLAYBOOK_NOT_FOUND:{text:'找不到这个版本的自定义条款清单',next:'先用 legal_playbook_register 注册这个版本，再检查'},
 }
 /** `human sentence（E_CODE）｜Next: one action` — the only text shown to end users. */
 export function clauseErrorMessage(code:ClauseErrorCode){const h=CLAUSE_HUMAN[code];return `${h.text}（${code}）｜下一步：${h.next}`}

@@ -90,12 +90,12 @@ Todos los plugins de PerryLink se pueden explorar en el marketplace integrado de
 
 ## Capacidades clave
 
-- **Árbol de cláusulas por numeración** — `legal.clause_tree` divide por números arábigos al inicio de línea (`1.`, `1.2`, `1)`; se exige un espacio tras el número) y une las líneas de continuación a la cláusula anterior; un texto sin numeración falla cerrado con `E_CLAUSE_TREE_INVALID`. Devuelve número de cláusulas, no resueltas y cobertura, y guarda el resultado en la tabla `contracts` del dominio `legal_clause`.
+- **Árbol de cláusulas por numeración** — `legal_clause_tree` divide por números arábigos al inicio de línea (`1.`, `1.2`, `1)`; se exige un espacio tras el número) y une las líneas de continuación a la cláusula anterior; un texto sin numeración falla cerrado con `E_CLAUSE_TREE_INVALID`. Devuelve número de cláusulas, no resueltas y cobertura, y guarda el resultado en la tabla `contracts` del dominio `legal_clause`.
 - **Mapeo de 12 claves** — cada cláusula se puntúa por coincidencias de palabras clave (el título pesa más que el cuerpo) y se mapea a una de las 12 claves; lo que no coincide se marca explícitamente como `unresolved`, nunca se oculta ni se descarta.
-- **Cobertura y huecos** — `legal.playbook_check` informa present / missing y cobertura de un árbol guardado; `legal.coverage_check` calcula el porcentaje de cobertura de las 12 claves directamente sobre el texto. Ambos solo cuentan si una clave aparece; ninguno juzga la calidad de la cláusula.
-- **Integridad de la numeración** — `legal.clause_integrity` informa números duplicados, números de primer nivel faltantes y numeración fuera de orden; cuando el número de primer nivel supera 5000 devuelve un único `E_CLAUSE_NUMBER_RANGE` en lugar de expandir todos los huecos.
-- **Playbooks personalizados** — `legal.playbook_register` registra un conjunto de claves versionado (claves no vacías y únicas); `legal.playbook_check` lo usa cuando se pasa `version`. El playbook integrado nunca se modifica.
-- **Exportación restringida** — `legal.export_tree` escribe un árbol guardado como JSON en `exports/<contract_id>.json` y devuelve la ruta y `sha256`; el nombre de archivo debe cumplir `[A-Za-z0-9._-]{1,120}` y no puede contener `/`, espacios ni caracteres chinos.
+- **Cobertura y huecos** — `legal_playbook_check` informa present / missing y cobertura de un árbol guardado; `legal_coverage_check` calcula el porcentaje de cobertura de las 12 claves directamente sobre el texto. Ambos solo cuentan si una clave aparece; ninguno juzga la calidad de la cláusula.
+- **Integridad de la numeración** — `legal_clause_integrity` informa números duplicados, números de primer nivel faltantes y numeración fuera de orden; cuando el número de primer nivel supera 5000 devuelve un único `E_CLAUSE_NUMBER_RANGE` en lugar de expandir todos los huecos.
+- **Playbooks personalizados** — `legal_playbook_register` registra un conjunto de claves versionado (claves no vacías y únicas); `legal_playbook_check` lo usa cuando se pasa `version`. El playbook integrado nunca se modifica.
+- **Exportación restringida** — `legal_export_tree` escribe un árbol guardado como JSON en `exports/<contract_id>.json` y devuelve la ruta y `sha256`; el nombre de archivo debe cumplir `[A-Za-z0-9._-]{1,120}` y no puede contener `/`, espacios ni caracteres chinos.
 - **Solo local** — el código fuente no contiene llamadas HTTP / DNS / WebSocket; sin red, sin llamada a modelo, sin subida y sin modificar los originales.
 
 ### Superficie de herramientas
@@ -104,13 +104,13 @@ Los nombres de herramienta son la API estable (se mantienen en inglés para coin
 
 | Herramienta | Propósito | Riesgo |
 |---|---|---|
-| `legal.playbook` | Devuelve el playbook integrado de 12 claves (4 categorías) | R0 solo lectura |
-| `legal.clause_tree` | Parsea el texto por numeración, mapea las 12 claves y guarda el árbol | R1 escritura local (dominio de almacenamiento) |
-| `legal.playbook_register` | Registra un playbook personalizado versionado; nunca sobrescribe el integrado | R1 escritura local (dominio de almacenamiento) |
-| `legal.playbook_check` | Compara un árbol guardado con el playbook integrado o una versión; informa present / missing / cobertura | R0 solo lectura |
-| `legal.export_tree` | Exporta un árbol guardado como archivo JSON; devuelve ruta y `sha256` | R1 escritura local |
-| `legal.clause_integrity` | Comprueba números duplicados, números de primer nivel faltantes y desorden | R0 solo lectura |
-| `legal.coverage_check` | Calcula la cobertura de las 12 claves sobre el texto; no escribe estado | R0 solo lectura |
+| `legal_playbook` | Devuelve el playbook integrado de 12 claves (4 categorías) | R0 solo lectura |
+| `legal_clause_tree` | Parsea el texto por numeración, mapea las 12 claves y guarda el árbol | R1 escritura local (dominio de almacenamiento) |
+| `legal_playbook_register` | Registra un playbook personalizado versionado; nunca sobrescribe el integrado | R1 escritura local (dominio de almacenamiento) |
+| `legal_playbook_check` | Compara un árbol guardado con el playbook integrado o una versión; informa present / missing / cobertura | R0 solo lectura |
+| `legal_export_tree` | Exporta un árbol guardado como archivo JSON; devuelve ruta y `sha256` | R1 escritura local |
+| `legal_clause_integrity` | Comprueba números duplicados, números de primer nivel faltantes y desorden | R0 solo lectura |
+| `legal_coverage_check` | Calcula la cobertura de las 12 claves sobre el texto; no escribe estado | R0 solo lectura |
 
 ### Entradas y salidas
 
@@ -185,7 +185,7 @@ Este plugin no tiene claves de configuración Schemastery: `cordis.patch.yml` in
 ```
 
 - El plugin declara `inject = ['tools', 'storageDomain']`: ambos servicios deben estar presentes o el plugin no se monta; si falta `storageDomain` nunca degrada en silencio.
-- Las herramientas se registran en `ctx.tools`; `legal.clause_tree` y `legal.playbook_register` escriben el dominio de almacenamiento, `legal.export_tree` además escribe `exports/`, y las otras cuatro son de solo lectura.
+- Las herramientas se registran en `ctx.tools`; `legal_clause_tree` y `legal_playbook_register` escriben el dominio de almacenamiento, `legal_export_tree` además escribe `exports/`, y las otras cuatro son de solo lectura.
 - El dominio de almacenamiento `legal_clause` (versión 1) tiene dos tablas: `contracts` para árboles y `playbooks` para playbooks personalizados; el cierre del dominio se registra como efecto Cordis y se revierte al parar o recargar en caliente.
 
 Playbook integrado de 12 claves:
@@ -226,7 +226,7 @@ No. Solo acepta texto plano UTF-8: `.docx`/`.doc`, PDF, escaneos e imágenes no 
 <details>
 <summary>No reconoce una cláusula o el resultado parece incorrecto. ¿Por qué?</summary>
 
-Ejecuta primero `node samples/quickstart/run.mjs --check`: si la muestra pasa, la instalación está bien. Después comprueba que cada cláusula esté en su propia línea y empiece por un número arábigo. El mapeo es coincidencia estática de palabras clave (el título pesa más que el cuerpo), no comprensión semántica: las palabras clave en chino e inglés funcionan, pero otra redacción puede caer en `unresolved`. Usa `legal.coverage_check` para ver qué claves faltan y registra tu propio conjunto con `legal.playbook_register`.
+Ejecuta primero `node samples/quickstart/run.mjs --check`: si la muestra pasa, la instalación está bien. Después comprueba que cada cláusula esté en su propia línea y empiece por un número arábigo. El mapeo es coincidencia estática de palabras clave (el título pesa más que el cuerpo), no comprensión semántica: las palabras clave en chino e inglés funcionan, pero otra redacción puede caer en `unresolved`. Usa `legal_coverage_check` para ver qué claves faltan y registra tu propio conjunto con `legal_playbook_register`.
 
 </details>
 
@@ -240,7 +240,7 @@ Nunca modifica los originales. Los árboles se escriben bajo `$DSH_HOME/storages
 <details>
 <summary>¿Un playbook personalizado sobrescribe las 12 claves integradas?</summary>
 
-No. `legal.playbook_register` escribe una entrada versionada en la tabla `playbooks` y el playbook integrado sigue siendo de solo lectura; `legal.playbook_check` usa las 12 claves integradas sin `version` y la versión indicada con ella. Una versión desconocida lanza `E_PLAYBOOK_NOT_FOUND`; claves vacías o duplicadas lanzan `E_PLAYBOOK_INVALID`.
+No. `legal_playbook_register` escribe una entrada versionada en la tabla `playbooks` y el playbook integrado sigue siendo de solo lectura; `legal_playbook_check` usa las 12 claves integradas sin `version` y la versión indicada con ella. Una versión desconocida lanza `E_PLAYBOOK_NOT_FOUND`; claves vacías o duplicadas lanzan `E_PLAYBOOK_INVALID`.
 
 </details>
 

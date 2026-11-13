@@ -90,12 +90,12 @@ Todos os plugins PerryLink podem ser explorados no marketplace embutido do DSH D
 
 ## Capacidades principais
 
-- **Árvore de cláusulas pela numeração** — `legal.clause_tree` divide por números arábicos no início da linha (`1.`, `1.2`, `1)`; é preciso um espaço após o número) e junta as linhas de continuação à cláusula anterior; texto sem numeração falha fechado com `E_CLAUSE_TREE_INVALID`. Retorna contagem de cláusulas, não resolvidas e cobertura, e grava o resultado na tabela `contracts` do domínio `legal_clause`.
+- **Árvore de cláusulas pela numeração** — `legal_clause_tree` divide por números arábicos no início da linha (`1.`, `1.2`, `1)`; é preciso um espaço após o número) e junta as linhas de continuação à cláusula anterior; texto sem numeração falha fechado com `E_CLAUSE_TREE_INVALID`. Retorna contagem de cláusulas, não resolvidas e cobertura, e grava o resultado na tabela `contracts` do domínio `legal_clause`.
 - **Mapeamento de 12 chaves** — cada cláusula é pontuada por acertos de palavras-chave (o título pesa mais que o corpo) e mapeada para uma das 12 chaves; o que não casa é marcado explicitamente como `unresolved`, nunca escondido nem descartado.
-- **Cobertura e lacunas** — `legal.playbook_check` informa present / missing e cobertura de uma árvore gravada; `legal.coverage_check` calcula o percentual de cobertura das 12 chaves direto no texto. Ambos só contam se a chave aparece; nenhum julga a qualidade da cláusula.
-- **Integridade da numeração** — `legal.clause_integrity` reporta números duplicados, números de primeiro nível faltantes e numeração fora de ordem; quando o número de primeiro nível passa de 5000, retorna um único `E_CLAUSE_NUMBER_RANGE` em vez de expandir todas as lacunas.
-- **Playbooks personalizados** — `legal.playbook_register` registra um conjunto de chaves versionado (chaves não vazias e únicas); `legal.playbook_check` o usa quando recebe `version`. O playbook embutido nunca é alterado.
-- **Exportação restrita** — `legal.export_tree` grava uma árvore armazenada como JSON em `exports/<contract_id>.json` e retorna o caminho e o `sha256`; o nome do arquivo deve casar `[A-Za-z0-9._-]{1,120}` e não pode conter `/`, espaços ou caracteres chineses.
+- **Cobertura e lacunas** — `legal_playbook_check` informa present / missing e cobertura de uma árvore gravada; `legal_coverage_check` calcula o percentual de cobertura das 12 chaves direto no texto. Ambos só contam se a chave aparece; nenhum julga a qualidade da cláusula.
+- **Integridade da numeração** — `legal_clause_integrity` reporta números duplicados, números de primeiro nível faltantes e numeração fora de ordem; quando o número de primeiro nível passa de 5000, retorna um único `E_CLAUSE_NUMBER_RANGE` em vez de expandir todas as lacunas.
+- **Playbooks personalizados** — `legal_playbook_register` registra um conjunto de chaves versionado (chaves não vazias e únicas); `legal_playbook_check` o usa quando recebe `version`. O playbook embutido nunca é alterado.
+- **Exportação restrita** — `legal_export_tree` grava uma árvore armazenada como JSON em `exports/<contract_id>.json` e retorna o caminho e o `sha256`; o nome do arquivo deve casar `[A-Za-z0-9._-]{1,120}` e não pode conter `/`, espaços ou caracteres chineses.
 - **Somente local** — o código-fonte não tem chamadas HTTP / DNS / WebSocket; sem rede, sem chamada a modelo, sem upload e sem alterar os originais.
 
 ### Superfície de ferramentas
@@ -104,13 +104,13 @@ Os nomes das ferramentas são a API estável (mantidos em inglês para casar com
 
 | Ferramenta | Propósito | Risco |
 |---|---|---|
-| `legal.playbook` | Retorna o playbook embutido de 12 chaves (4 categorias) | R0 somente leitura |
-| `legal.clause_tree` | Interpreta o texto pela numeração, mapeia as 12 chaves e grava a árvore | R1 escrita local (domínio de armazenamento) |
-| `legal.playbook_register` | Registra um playbook personalizado versionado; nunca sobrescreve o embutido | R1 escrita local (domínio de armazenamento) |
-| `legal.playbook_check` | Compara uma árvore gravada com o playbook embutido ou uma versão; informa present / missing / cobertura | R0 somente leitura |
-| `legal.export_tree` | Exporta uma árvore gravada como arquivo JSON; retorna caminho e `sha256` | R1 escrita local |
-| `legal.clause_integrity` | Verifica números duplicados, números de primeiro nível faltantes e desordem | R0 somente leitura |
-| `legal.coverage_check` | Calcula a cobertura das 12 chaves direto no texto; não grava estado | R0 somente leitura |
+| `legal_playbook` | Retorna o playbook embutido de 12 chaves (4 categorias) | R0 somente leitura |
+| `legal_clause_tree` | Interpreta o texto pela numeração, mapeia as 12 chaves e grava a árvore | R1 escrita local (domínio de armazenamento) |
+| `legal_playbook_register` | Registra um playbook personalizado versionado; nunca sobrescreve o embutido | R1 escrita local (domínio de armazenamento) |
+| `legal_playbook_check` | Compara uma árvore gravada com o playbook embutido ou uma versão; informa present / missing / cobertura | R0 somente leitura |
+| `legal_export_tree` | Exporta uma árvore gravada como arquivo JSON; retorna caminho e `sha256` | R1 escrita local |
+| `legal_clause_integrity` | Verifica números duplicados, números de primeiro nível faltantes e desordem | R0 somente leitura |
+| `legal_coverage_check` | Calcula a cobertura das 12 chaves direto no texto; não grava estado | R0 somente leitura |
 
 ### Entradas e saídas
 
@@ -185,7 +185,7 @@ Este plugin não tem chaves de configuração Schemastery: `cordis.patch.yml` in
 ```
 
 - O plugin declara `inject = ['tools', 'storageDomain']`: os dois serviços precisam estar presentes ou o plugin não monta; sem `storageDomain` nunca há degradação silenciosa.
-- As ferramentas se registram em `ctx.tools`; `legal.clause_tree` e `legal.playbook_register` gravam o domínio de armazenamento, `legal.export_tree` também grava `exports/`, e as outras quatro são somente leitura.
+- As ferramentas se registram em `ctx.tools`; `legal_clause_tree` e `legal_playbook_register` gravam o domínio de armazenamento, `legal_export_tree` também grava `exports/`, e as outras quatro são somente leitura.
 - O domínio de armazenamento `legal_clause` (versão 1) tem duas tabelas: `contracts` para árvores e `playbooks` para playbooks personalizados; o fechamento do domínio é registrado como efeito Cordis e é desfeito ao parar ou recarregar a quente.
 
 Playbook embutido de 12 chaves:
@@ -226,7 +226,7 @@ Não. Só aceita texto plano UTF-8: `.docx`/`.doc`, PDF, digitalizações e imag
 <details>
 <summary>Uma cláusula não foi reconhecida ou o resultado parece errado. Por quê?</summary>
 
-Rode primeiro `node samples/quickstart/run.mjs --check`: se a amostra passa, a instalação está ok. Depois confira se cada cláusula está na própria linha e começa com um número arábico. O mapeamento é casamento estático de palavras-chave (o título pesa mais que o corpo), não compreensão semântica: palavras-chave em chinês e inglês funcionam, mas outra redação pode cair em `unresolved`. Use `legal.coverage_check` para ver quais chaves faltam e registre seu próprio conjunto com `legal.playbook_register`.
+Rode primeiro `node samples/quickstart/run.mjs --check`: se a amostra passa, a instalação está ok. Depois confira se cada cláusula está na própria linha e começa com um número arábico. O mapeamento é casamento estático de palavras-chave (o título pesa mais que o corpo), não compreensão semântica: palavras-chave em chinês e inglês funcionam, mas outra redação pode cair em `unresolved`. Use `legal_coverage_check` para ver quais chaves faltam e registre seu próprio conjunto com `legal_playbook_register`.
 
 </details>
 
@@ -240,7 +240,7 @@ Nunca altera os originais. As árvores são gravadas em `$DSH_HOME/storages/dsh-
 <details>
 <summary>Um playbook personalizado sobrescreve as 12 chaves embutidas?</summary>
 
-Não. `legal.playbook_register` grava uma entrada versionada na tabela `playbooks` e o playbook embutido continua somente leitura; `legal.playbook_check` usa as 12 chaves embutidas sem `version` e a versão indicada com ela. Versão desconhecida gera `E_PLAYBOOK_NOT_FOUND`; chaves vazias ou duplicadas geram `E_PLAYBOOK_INVALID`.
+Não. `legal_playbook_register` grava uma entrada versionada na tabela `playbooks` e o playbook embutido continua somente leitura; `legal_playbook_check` usa as 12 chaves embutidas sem `version` e a versão indicada com ela. Versão desconhecida gera `E_PLAYBOOK_NOT_FOUND`; chaves vazias ou duplicadas geram `E_PLAYBOOK_INVALID`.
 
 </details>
 
