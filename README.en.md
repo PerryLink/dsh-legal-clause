@@ -90,12 +90,12 @@ All PerryLink plugins can be browsed in the built-in DSH Desktop marketplace: **
 
 ## Core capabilities
 
-- **Clause tree by numbering** — `legal.clause_tree` splits clauses on leading Arabic numbers (`1.`, `1.2`, `1)`; whitespace after the number is required) and folds continuation lines into the previous clause; text with no numbering fails closed with `E_CLAUSE_TREE_INVALID`. It returns clause count, unresolved count and coverage, and stores the result in the `contracts` table of the `legal_clause` domain.
+- **Clause tree by numbering** — `legal_clause_tree` splits clauses on leading Arabic numbers (`1.`, `1.2`, `1)`; whitespace after the number is required) and folds continuation lines into the previous clause; text with no numbering fails closed with `E_CLAUSE_TREE_INVALID`. It returns clause count, unresolved count and coverage, and stores the result in the `contracts` table of the `legal_clause` domain.
 - **12-key mapping** — each clause is scored by keyword hits (title hits weigh more than body hits) and mapped to one of 12 keys; anything unmatched is marked `unresolved` explicitly, never hidden or dropped.
-- **Coverage and gaps** — `legal.playbook_check` reports present / missing and coverage for a stored tree; `legal.coverage_check` computes the 12-key coverage ratio directly on text. Both only count whether a key appears; neither judges clause quality.
-- **Numbering integrity** — `legal.clause_integrity` reports duplicate numbers, missing top-level numbers and out-of-order numbering; when the top-level number exceeds 5000 it returns one `E_CLAUSE_NUMBER_RANGE` issue instead of expanding every gap.
-- **Custom playbooks** — `legal.playbook_register` registers a versioned custom key set (keys must be non-empty and unique); `legal.playbook_check` uses it when a `version` is passed. The built-in playbook is never modified.
-- **Restricted export** — `legal.export_tree` writes a stored tree as JSON under `exports/<contract_id>.json` and returns the path plus `sha256`; the filename must match `[A-Za-z0-9._-]{1,120}` and may not contain `/`, spaces or Chinese characters.
+- **Coverage and gaps** — `legal_playbook_check` reports present / missing and coverage for a stored tree; `legal_coverage_check` computes the 12-key coverage ratio directly on text. Both only count whether a key appears; neither judges clause quality.
+- **Numbering integrity** — `legal_clause_integrity` reports duplicate numbers, missing top-level numbers and out-of-order numbering; when the top-level number exceeds 5000 it returns one `E_CLAUSE_NUMBER_RANGE` issue instead of expanding every gap.
+- **Custom playbooks** — `legal_playbook_register` registers a versioned custom key set (keys must be non-empty and unique); `legal_playbook_check` uses it when a `version` is passed. The built-in playbook is never modified.
+- **Restricted export** — `legal_export_tree` writes a stored tree as JSON under `exports/<contract_id>.json` and returns the path plus `sha256`; the filename must match `[A-Za-z0-9._-]{1,120}` and may not contain `/`, spaces or Chinese characters.
 - **Local only** — the source contains no HTTP / DNS / WebSocket calls; no network, no model call, no upload, and originals are never modified.
 
 ### Tool surface
@@ -104,13 +104,13 @@ Tool names are the stable API (kept in English to match runtime output); descrip
 
 | Tool | Purpose | Risk |
 |---|---|---|
-| `legal.playbook` | Return the built-in 12-key playbook (4 categories) | R0 read-only |
-| `legal.clause_tree` | Parse contract text by numbering, map the 12 keys and store the clause tree | R1 local write (storage domain) |
-| `legal.playbook_register` | Register a versioned custom playbook key set; never overwrites the built-in playbook | R1 local write (storage domain) |
-| `legal.playbook_check` | Compare a stored tree against the built-in playbook or a named version; report present / missing / coverage | R0 read-only |
-| `legal.export_tree` | Export a stored clause tree as a JSON file; return the path and `sha256` | R1 local write |
-| `legal.clause_integrity` | Check duplicate clause numbers, missing top-level numbers and out-of-order numbering | R0 read-only |
-| `legal.coverage_check` | Compute the 12-key coverage ratio directly on text; writes no state | R0 read-only |
+| `legal_playbook` | Return the built-in 12-key playbook (4 categories) | R0 read-only |
+| `legal_clause_tree` | Parse contract text by numbering, map the 12 keys and store the clause tree | R1 local write (storage domain) |
+| `legal_playbook_register` | Register a versioned custom playbook key set; never overwrites the built-in playbook | R1 local write (storage domain) |
+| `legal_playbook_check` | Compare a stored tree against the built-in playbook or a named version; report present / missing / coverage | R0 read-only |
+| `legal_export_tree` | Export a stored clause tree as a JSON file; return the path and `sha256` | R1 local write |
+| `legal_clause_integrity` | Check duplicate clause numbers, missing top-level numbers and out-of-order numbering | R0 read-only |
+| `legal_coverage_check` | Compute the 12-key coverage ratio directly on text; writes no state | R0 read-only |
 
 ### Inputs & outputs
 
@@ -185,7 +185,7 @@ This plugin has no Schemastery config keys: `cordis.patch.yml` inserts a single 
 ```
 
 - The plugin declares `inject = ['tools', 'storageDomain']`: both services must be present or the plugin does not mount; a missing `storageDomain` never degrades silently.
-- Tools register on `ctx.tools`; `legal.clause_tree` and `legal.playbook_register` write the storage domain, `legal.export_tree` also writes `exports/`, and the other four tools are read-only.
+- Tools register on `ctx.tools`; `legal_clause_tree` and `legal_playbook_register` write the storage domain, `legal_export_tree` also writes `exports/`, and the other four tools are read-only.
 - Storage domain `legal_clause` (version 1) has two tables: `contracts` for clause trees and `playbooks` for custom playbooks; domain close is registered as a Cordis effect and is undone on stop or hot reload.
 
 Built-in 12-key playbook:
@@ -226,7 +226,7 @@ No. Only UTF-8 plain text is accepted: `.docx`/`.doc`, PDFs, scans and images ar
 <details>
 <summary>A clause was not recognized, or the result looks wrong. Why?</summary>
 
-Run `node samples/quickstart/run.mjs --check` first: a passing sample means the install is fine. Then check that every clause is on its own line and starts with an Arabic number. Mapping is static keyword matching (title hits weigh more than body hits), not semantic understanding: Chinese and English keywords both work, but a different wording may land in `unresolved`. Use `legal.coverage_check` to see which keys are missing, then register your own key set with `legal.playbook_register`.
+Run `node samples/quickstart/run.mjs --check` first: a passing sample means the install is fine. Then check that every clause is on its own line and starts with an Arabic number. Mapping is static keyword matching (title hits weigh more than body hits), not semantic understanding: Chinese and English keywords both work, but a different wording may land in `unresolved`. Use `legal_coverage_check` to see which keys are missing, then register your own key set with `legal_playbook_register`.
 
 </details>
 
@@ -240,7 +240,7 @@ It never modifies originals. Clause trees are written under `$DSH_HOME/storages/
 <details>
 <summary>Does a custom playbook overwrite the built-in 12 keys?</summary>
 
-No. `legal.playbook_register` writes a versioned entry into the `playbooks` table and the built-in playbook stays read-only; `legal.playbook_check` uses the built-in 12 keys without `version` and the named version with it. An unknown version raises `E_PLAYBOOK_NOT_FOUND`; empty or duplicate keys raise `E_PLAYBOOK_INVALID`.
+No. `legal_playbook_register` writes a versioned entry into the `playbooks` table and the built-in playbook stays read-only; `legal_playbook_check` uses the built-in 12 keys without `version` and the named version with it. An unknown version raises `E_PLAYBOOK_NOT_FOUND`; empty or duplicate keys raise `E_PLAYBOOK_INVALID`.
 
 </details>
 

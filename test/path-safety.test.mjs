@@ -73,8 +73,8 @@ test('the export tool refuses a traversal contract id', async () => {
     const baseDir = path.join(dir, 'store')
     const by = Object.fromEntries(createTools({ contracts: new T(), baseDir }).map((tool) => [tool.name, tool]))
     const exec = { callId: 'path' }
-    await by['legal.clause_tree'].execute({ contract_text: '1. Confidentiality\nSecret.', contract_id: '../evil' }, exec)
-    await assert.rejects(() => by['legal.export_tree'].execute({ contract_id: '../evil' }, exec), code('E_LEGAL_PATH_INVALID'))
+    await by['legal_clause_tree'].execute({ contract_text: '1. Confidentiality\nSecret.', contract_id: '../evil' }, exec)
+    await assert.rejects(() => by['legal_export_tree'].execute({ contract_id: '../evil' }, exec), code('E_LEGAL_PATH_INVALID'))
     await assert.rejects(() => access(path.join(baseDir, 'evil.json')))
   } finally { await rm(dir, { recursive: true, force: true }) }
 })

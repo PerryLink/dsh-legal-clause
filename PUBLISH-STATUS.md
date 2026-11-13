@@ -5,11 +5,11 @@
 
 ## 0.1.0-alpha.1 — playbook check (2026-10-31)
 
-- Added `legal.playbook_check`; MIT NDA sample test; 4 S1 gate rows unchanged.
+- Added `legal_playbook_check`; MIT NDA sample test; 4 S1 gate rows unchanged.
 
 ### latest moved
 - `latest`/`next` verified alpha.1 after propagation.
 
 ## 0.1.0-alpha.2 — custom playbooks (2026-10-31)
 
-- Added `legal.playbook_register` versioned custom keys; `legal.playbook_check` accepts version; 5 gate rows.
+- Added `legal_playbook_register` versioned custom keys; `legal_playbook_check` accepts version; 5 gate rows.

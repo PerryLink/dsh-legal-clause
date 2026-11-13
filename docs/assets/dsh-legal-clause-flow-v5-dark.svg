@@ -15,7 +15,7 @@
 <text x="636" y="112" fill="#737b8d" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="11.5">^\s*(\d+(?:\.\d+)*)[.)]?\s+</text>
 <rect x="866.0" y="106" width="174.0" height="26" rx="13" fill="#242d42"/>
 <text x="878.0" y="114" fill="#8496f5" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="10.5">10 clauses · 0 unresolved</text>
-<text x="64" y="158" fill="#a8b1c4" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="12">clause tree · legal.clause_tree</text>
+<text x="64" y="158" fill="#a8b1c4" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="12">clause tree · legal_clause_tree</text>
 <text x="416" y="158" fill="#737b8d" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="11" text-anchor="middle">title +3 / body +2</text>
 <text x="500" y="158" fill="#a8b1c4" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="12">12-key playbook · 4 categories</text>
 <text x="760" y="158" fill="#737b8d" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11">category</text>
@@ -145,13 +145,13 @@
 <text x="64" y="500" fill="#737b8d" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11">one key per clause · best hit wins · no hit → unresolved (explicit, never dropped)</text>
 <rect x="64" y="512" width="480" height="82" rx="16" fill="#1b2231" stroke="#2e374b" stroke-width="1.4" filter="url(#soft)"/>
 <text x="80" y="522" fill="#737b8d" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11">R0 · read-only tools</text>
-<text x="80" y="544" fill="#a8b1c4" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="11.5">legal.playbook_check → present 10 · missing 2 · coverage 0.83</text>
-<text x="80" y="562" fill="#a8b1c4" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="11.5">legal.coverage_check → coverage_pct 83.33 · 10 / 12 keys</text>
-<text x="80" y="580" fill="#a8b1c4" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="11.5">legal.clause_integrity → 0 issues · duplicate / gap / order</text>
+<text x="80" y="544" fill="#a8b1c4" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="11.5">legal_playbook_check → present 10 · missing 2 · coverage 0.83</text>
+<text x="80" y="562" fill="#a8b1c4" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="11.5">legal_coverage_check → coverage_pct 83.33 · 10 / 12 keys</text>
+<text x="80" y="580" fill="#a8b1c4" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="11.5">legal_clause_integrity → 0 issues · duplicate / gap / order</text>
 <rect x="556" y="512" width="504" height="82" rx="16" fill="#1b2231" stroke="#2e374b" stroke-width="1.4" filter="url(#soft)"/>
 <text x="572" y="522" fill="#737b8d" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11">R1 · local write tools</text>
-<text x="572" y="544" fill="#a8b1c4" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="11.5">legal.clause_tree → legal_clause.contracts · 10 clauses</text>
-<text x="572" y="562" fill="#a8b1c4" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="11.5">legal.playbook_register → legal_clause.playbooks · versioned keys</text>
-<text x="572" y="580" fill="#a8b1c4" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="11.5">legal.export_tree → exports/NDA-2026-001.json · path + sha256</text>
+<text x="572" y="544" fill="#a8b1c4" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="11.5">legal_clause_tree → legal_clause.contracts · 10 clauses</text>
+<text x="572" y="562" fill="#a8b1c4" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="11.5">legal_playbook_register → legal_clause.playbooks · versioned keys</text>
+<text x="572" y="580" fill="#a8b1c4" font-family="'Consolas','SFMono-Regular','Menlo',ui-monospace,monospace" font-size="11.5">legal_export_tree → exports/NDA-2026-001.json · path + sha256</text>
 <text x="64" y="616" fill="#737b8d" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11">no network · no model call · originals untouched · top-level clause no &gt; 5000 → one E_CLAUSE_NUMBER_RANGE · alpha / partial · Apache-2.0</text>
 </svg>

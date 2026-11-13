@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0] — 2026-11-13
+
+### Breaking
+
+- Tool names no longer contain a dot: `legal.clause_tree` → `legal_clause_tree`, and the same for the other six (`legal_playbook`, `legal_playbook_register`, `legal_playbook_check`, `legal_export_tree`, `legal_clause_integrity`, `legal_coverage_check`). Providers validate the `tools[].name` field against `^[a-zA-Z0-9_-]+$`; the dotted names invalidated the whole `tools` array, so the plugin registered but every request carrying its tools was rejected with `Invalid 'tools[N].name'`. Minor bump because tool names are part of the 0.1.0 compatibility promise — update prompts, saved calls and permission rules that still say `legal.*`. Fixes #9.
+- `test/tool-name-wire.test.mjs` pins the wire pattern so a new tool cannot reintroduce a dot.
+
 ## [0.1.0] — 2026-11-03
 
 ### Stable
@@ -17,13 +24,13 @@
 
 ### Added
 
-- `legal.coverage_check`: coverage against the 12-key playbook — mapped keys, missing keys and the coverage ratio. Read-only; it does not judge clause quality. Verified by `node --test test/*.test.mjs` (11/11).
+- `legal_coverage_check`: coverage against the 12-key playbook — mapped keys, missing keys and the coverage ratio. Read-only; it does not judge clause quality. Verified by `node --test test/*.test.mjs` (11/11).
 
 ## [Unreleased]
 
 ### Added
 
-- `legal.clause_integrity`: contract numbering QA — duplicate clause numbers, missing top-level numbers and out-of-order numbering, with stable issue codes. Read-only. Verified by `node --test test/*.test.mjs` (8/8).
+- `legal_clause_integrity`: contract numbering QA — duplicate clause numbers, missing top-level numbers and out-of-order numbering, with stable issue codes. Read-only. Verified by `node --test test/*.test.mjs` (8/8).
 
 ## [0.1.0-alpha.8] — 2026-11-01
 

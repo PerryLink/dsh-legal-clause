@@ -666,7 +666,7 @@ def flow_svg(skin: str) -> str:
            max_w=iw - 24)
 
     # ---- column headers ---------------------------------------------------
-    v.text(64, 158, "clause tree · legal.clause_tree", 12, s["sub"], "sans",
+    v.text(64, 158, "clause tree · legal_clause_tree", 12, s["sub"], "sans",
            max_w=260)
     v.text(416, 158, "title +3 / body +2", 11, s["faint"],
            "mono", anchor="middle", max_w=150)
@@ -737,22 +737,22 @@ def flow_svg(skin: str) -> str:
     v.rect(64, RAIL_Y0, 480, RAIL_Y1 - RAIL_Y0, s["card"], radius=16,
            stroke=s["edge"], shadow=True)
     v.text(80, 522, "R0 · read-only tools", 11, s["faint"], "sans", max_w=200)
-    v.text(80, 544, "legal.playbook_check → present 10 · missing 2 · "
+    v.text(80, 544, "legal_playbook_check → present 10 · missing 2 · "
                     "coverage 0.83", 11.5, s["sub"], "mono", max_w=464)
-    v.text(80, 562, "legal.coverage_check → coverage_pct 83.33 · 10 / 12 "
+    v.text(80, 562, "legal_coverage_check → coverage_pct 83.33 · 10 / 12 "
                     "keys", 11.5, s["sub"], "mono", max_w=464)
-    v.text(80, 580, "legal.clause_integrity → 0 issues · duplicate / gap / "
+    v.text(80, 580, "legal_clause_integrity → 0 issues · duplicate / gap / "
                     "order", 11.5, s["sub"], "mono", max_w=464)
 
     v.rect(556, RAIL_Y0, 504, RAIL_Y1 - RAIL_Y0, s["card"], radius=16,
            stroke=s["edge"], shadow=True)
     v.text(572, 522, "R1 · local write tools", 11, s["faint"], "sans",
            max_w=200)
-    v.text(572, 544, "legal.clause_tree → legal_clause.contracts · "
+    v.text(572, 544, "legal_clause_tree → legal_clause.contracts · "
                      "10 clauses", 11.5, s["sub"], "mono", max_w=472)
-    v.text(572, 562, "legal.playbook_register → legal_clause.playbooks · "
+    v.text(572, 562, "legal_playbook_register → legal_clause.playbooks · "
                      "versioned keys", 11.5, s["sub"], "mono", max_w=472)
-    v.text(572, 580, "legal.export_tree → exports/NDA-2026-001.json · "
+    v.text(572, 580, "legal_export_tree → exports/NDA-2026-001.json · "
                      "path + sha256", 11.5, s["sub"], "mono", max_w=472)
 
     # ---- footer -----------------------------------------------------------

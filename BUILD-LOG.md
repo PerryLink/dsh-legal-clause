@@ -6,7 +6,7 @@
 
 ### alpha.1 — playbook check
 
-- Added `legal.playbook_check`; public NDA sample test.
+- Added `legal_playbook_check`; public NDA sample test.
 
 ### alpha.2 — custom playbooks
 
