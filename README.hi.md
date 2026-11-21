@@ -145,6 +145,11 @@ pnpm build && node samples/quickstart/run.mjs --check
 
 *साथ आए 10-क्लॉज़ सिंथेटिक NDA पर वास्तविक कमांड `node samples/quickstart/run.mjs --check`: 10 क्लॉज़, 0 अनसुलझे, 12 में से 10 कुंजियाँ मौजूद (`price_adjustment` और `data_protection` गायब), 0 नंबरिंग समस्याएँ, गोल्डन फ़ाइल मेल खाती है। स्रोत-विवरण [`screenshots.json`](screenshots.json) में; गोल्डन फ़ाइल `samples/quickstart/expected/result.json` है।*
 
+![dsh-legal-clause quickstart का वास्तविक टर्मिनल आउटपुट](docs/assets/dsh-legal-clause-demo.gif)
+
+*इस रिपॉज़िटरी में दर्ज असली रन का एनिमेटेड रीप्ले।*
+
+
 फ़िक्स्चर उदाहरण: इनपुट [`fixtures/public/mit/sample_nda.txt`](https://github.com/PerryLink/dsh-legal-clause/blob/main/fixtures/public/mit/sample_nda.txt) (MIT लाइसेंस वाला सार्वजनिक नमूना); कमांड `pnpm test`।
 
 ### स्वीकृति साक्ष्य

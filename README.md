@@ -145,6 +145,11 @@ pnpm build && node samples/quickstart/run.mjs --check
 
 *真实命令 `node samples/quickstart/run.mjs --check` 跑在随包 10 条合成 NDA 上：10 条条款、0 条未映射、12 键中命中 10 项（缺 `price_adjustment`、`data_protection`）、编号问题 0 条，金标一致。出处见 [`screenshots.json`](screenshots.json)，金标见 `samples/quickstart/expected/result.json`。*
 
+![dsh-legal-clause quickstart 真实运行输出](docs/assets/dsh-legal-clause-demo.gif)
+
+*本仓库一次真实运行的动图回放。*
+
+
 fixture 示例：输入 [`fixtures/public/mit/sample_nda.txt`](https://github.com/PerryLink/dsh-legal-clause/blob/main/fixtures/public/mit/sample_nda.txt)（MIT 许可公开样本）；命令 `pnpm test`。
 
 ### 验收证据

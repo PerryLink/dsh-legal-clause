@@ -145,6 +145,11 @@ pnpm build && node samples/quickstart/run.mjs --check
 
 *El comando real `node samples/quickstart/run.mjs --check` sobre el NDA sintético de 10 cláusulas incluido: 10 cláusulas, 0 sin resolver, 10 de las 12 claves presentes (faltan `price_adjustment` y `data_protection`), 0 problemas de numeración y el archivo dorado coincide. Procedencia en [`screenshots.json`](screenshots.json); el archivo dorado es `samples/quickstart/expected/result.json`.*
 
+![Salida real del quickstart de dsh-legal-clause](docs/assets/dsh-legal-clause-demo.gif)
+
+*Repetición animada de una ejecución real registrada en este repositorio.*
+
+
 Ejemplo con fixture: entrada [`fixtures/public/mit/sample_nda.txt`](https://github.com/PerryLink/dsh-legal-clause/blob/main/fixtures/public/mit/sample_nda.txt) (muestra pública con licencia MIT); comando `pnpm test`.
 
 ### Evidencia de aceptación
