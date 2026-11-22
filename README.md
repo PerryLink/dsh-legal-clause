@@ -11,10 +11,12 @@
 
 面向 DeepSeek Harness 的合同条款静态检查插件：按行首编号切分条款，用标题与正文里的关键词把每条映射到风险 / 控制 / 商务 / 履约四类共 12 个键，再报告缺口与编号问题；不联网、不调用模型、不上传。
 
+最近一次核验：DeepSeek Harness `dsh-v0.2.3-alpha.1`（2026-11-22）。
+
 [安装](#三步上手) · [配置](#配置) · [FAQ](#faq) · [简体中文](README.md) · [English](README.en.md) · [Español](README.es.md) · [Português](README.pt.md) · [हिन्दी](README.hi.md)
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-3366CC?style=flat-square&labelColor=2B3245)](LICENSE)
-[![DSH](https://img.shields.io/badge/DSH-%E2%89%A50.2.1%20%3C0.4.0-4B67B4?style=flat-square&labelColor=2B3245)](#兼容性)
+[![DSH](https://img.shields.io/badge/DSH-%E2%89%A50.2.2%20%3C0.4.0-4B67B4?style=flat-square&labelColor=2B3245)](#兼容性)
 [![npm](https://img.shields.io/npm/v/dsh-legal-clause?style=flat-square&labelColor=2B3245&color=CB3837)](https://www.npmjs.com/package/dsh-legal-clause)
 [![CI](https://img.shields.io/github/actions/workflow/status/PerryLink/dsh-legal-clause/ci.yml?branch=main&label=CI&style=flat-square&labelColor=2B3245)](https://github.com/PerryLink/dsh-legal-clause/actions/workflows/ci.yml)
 [![Node](https://img.shields.io/badge/node-%E2%89%A524.9%20%3C25-339933?style=flat-square&labelColor=2B3245)](#兼容性)
@@ -149,7 +151,6 @@ pnpm build && node samples/quickstart/run.mjs --check
 
 *本仓库一次真实运行的动图回放。*
 
-
 fixture 示例：输入 [`fixtures/public/mit/sample_nda.txt`](https://github.com/PerryLink/dsh-legal-clause/blob/main/fixtures/public/mit/sample_nda.txt)（MIT 许可公开样本）；命令 `pnpm test`。
 
 ### 验收证据
@@ -217,7 +218,7 @@ fixture 示例：输入 [`fixtures/public/mit/sample_nda.txt`](https://github.co
 <details>
 <summary>装不上或挂载失败怎么办？</summary>
 
-先看 `node --version` 是否 ≥24.9 且 <25、`dsh --version` 是否在 `>=0.2.1-rc.3 <0.4.0`，再跑 `dsh plugin --profile <profile> add dsh-legal-clause`。宿主必须提供 `tools` 与 `storageDomain` 两个服务（插件硬依赖），否则不会挂载。完整错误对照见 [`TROUBLESHOOTING.md`](TROUBLESHOOTING.md)。
+先看 `node --version` 是否 ≥24.9 且 <25、`dsh --version` 是否在 `>=0.2.2-rc.3 <0.4.0`，再跑 `dsh plugin --profile <profile> add dsh-legal-clause`。宿主必须提供 `tools` 与 `storageDomain` 两个服务（插件硬依赖），否则不会挂载。完整错误对照见 [`TROUBLESHOOTING.md`](TROUBLESHOOTING.md)。
 
 </details>
 
@@ -288,7 +289,7 @@ fixture 示例：输入 [`fixtures/public/mit/sample_nda.txt`](https://github.co
 
 | 维度 | 状态 |
 |---|---|
-| Harness | `dsh >=0.2.1-rc.3 <0.4.0` |
+| Harness | `dsh >=0.2.2-rc.3 <0.4.0` |
 | Node | `>=24.9.0 <25` |
 | 平台 | 任何 DSH 可运行处；仅本地文件 |
 | 数据 | 不联网、不调用模型、不上传 |

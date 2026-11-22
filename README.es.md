@@ -11,10 +11,12 @@
 
 Un verificador estático de cláusulas para DeepSeek Harness: divide las cláusulas por su numeración inicial, mapea cada una a una de 12 claves (riesgo / control / comercial / ejecución) con palabras clave del título y del cuerpo, y reporta huecos y problemas de numeración. Sin red, sin llamada a modelo y sin subida de datos.
 
+Última verificación: DeepSeek Harness `dsh-v0.2.3-alpha.1` (2026-11-22).
+
 [Instalar](#instalación-en-tres-pasos) · [Configuración](#configuración) · [FAQ](#faq) · [简体中文](README.md) · [English](README.en.md) · [Español](README.es.md) · [Português](README.pt.md) · [हिन्दी](README.hi.md)
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-3366CC?style=flat-square&labelColor=2B3245)](LICENSE)
-[![DSH](https://img.shields.io/badge/DSH-%E2%89%A50.2.1%20%3C0.4.0-4B67B4?style=flat-square&labelColor=2B3245)](#compatibilidad)
+[![DSH](https://img.shields.io/badge/DSH-%E2%89%A50.2.2%20%3C0.4.0-4B67B4?style=flat-square&labelColor=2B3245)](#compatibilidad)
 [![npm](https://img.shields.io/npm/v/dsh-legal-clause?style=flat-square&labelColor=2B3245&color=CB3837)](https://www.npmjs.com/package/dsh-legal-clause)
 [![CI](https://img.shields.io/github/actions/workflow/status/PerryLink/dsh-legal-clause/ci.yml?branch=main&label=CI&style=flat-square&labelColor=2B3245)](https://github.com/PerryLink/dsh-legal-clause/actions/workflows/ci.yml)
 [![Node](https://img.shields.io/badge/node-%E2%89%A524.9%20%3C25-339933?style=flat-square&labelColor=2B3245)](#compatibilidad)
@@ -149,7 +151,6 @@ pnpm build && node samples/quickstart/run.mjs --check
 
 *Repetición animada de una ejecución real registrada en este repositorio.*
 
-
 Ejemplo con fixture: entrada [`fixtures/public/mit/sample_nda.txt`](https://github.com/PerryLink/dsh-legal-clause/blob/main/fixtures/public/mit/sample_nda.txt) (muestra pública con licencia MIT); comando `pnpm test`.
 
 ### Evidencia de aceptación
@@ -217,7 +218,7 @@ Playbook integrado de 12 claves:
 <details>
 <summary>No se instala o no se monta. ¿Qué hago?</summary>
 
-Comprueba que `node --version` sea ≥24.9 y <25 y que `dsh --version` esté dentro de `>=0.2.1-rc.3 <0.4.0`, y luego ejecuta `dsh plugin --profile <profile> add dsh-legal-clause`. El host debe proporcionar `tools` y `storageDomain` (dependencia dura); si falta alguno, el plugin no se monta. La tabla completa de errores está en [`TROUBLESHOOTING.md`](TROUBLESHOOTING.md).
+Comprueba que `node --version` sea ≥24.9 y <25 y que `dsh --version` esté dentro de `>=0.2.2-rc.3 <0.4.0`, y luego ejecuta `dsh plugin --profile <profile> add dsh-legal-clause`. El host debe proporcionar `tools` y `storageDomain` (dependencia dura); si falta alguno, el plugin no se monta. La tabla completa de errores está en [`TROUBLESHOOTING.md`](TROUBLESHOOTING.md).
 
 </details>
 
@@ -288,7 +289,7 @@ sistemas externos: ninguno
 
 | Superficie | Estado |
 |---|---|
-| Harness | `dsh >=0.2.1-rc.3 <0.4.0` |
+| Harness | `dsh >=0.2.2-rc.3 <0.4.0` |
 | Node | `>=24.9.0 <25` |
 | Plataformas | Donde corra DSH; solo archivos locales |
 | Datos | Sin red, sin llamada a modelo, sin subida |

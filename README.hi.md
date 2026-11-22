@@ -11,10 +11,12 @@
 
 DeepSeek Harness के लिए अनुबंध-क्लॉज़ स्टैटिक चेकर: पंक्ति के शुरू में दिए नंबर से क्लॉज़ बाँटता है, शीर्षक और मुख्य भाग के कीवर्ड से हर क्लॉज़ को जोखिम / नियंत्रण / वाणिज्यिक / निष्पादन — इन चार श्रेणियों की 12 कुंजियों में से एक पर मैप करता है, फिर कमियाँ और नंबरिंग की समस्याएँ बताता है। कोई नेटवर्क नहीं, कोई मॉडल कॉल नहीं, कोई अपलोड नहीं।
 
+अंतिम सत्यापन: DeepSeek Harness `dsh-v0.2.3-alpha.1` (2026-11-22).
+
 [इंस्टॉल](#तीन-चरणों-में-शुरुआत) · [कॉन्फ़िगरेशन](#कॉन्फ़िगरेशन) · [FAQ](#faq) · [简体中文](README.md) · [English](README.en.md) · [Español](README.es.md) · [Português](README.pt.md) · [हिन्दी](README.hi.md)
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-3366CC?style=flat-square&labelColor=2B3245)](LICENSE)
-[![DSH](https://img.shields.io/badge/DSH-%E2%89%A50.2.1%20%3C0.4.0-4B67B4?style=flat-square&labelColor=2B3245)](#संगतता)
+[![DSH](https://img.shields.io/badge/DSH-%E2%89%A50.2.2%20%3C0.4.0-4B67B4?style=flat-square&labelColor=2B3245)](#संगतता)
 [![npm](https://img.shields.io/npm/v/dsh-legal-clause?style=flat-square&labelColor=2B3245&color=CB3837)](https://www.npmjs.com/package/dsh-legal-clause)
 [![CI](https://img.shields.io/github/actions/workflow/status/PerryLink/dsh-legal-clause/ci.yml?branch=main&label=CI&style=flat-square&labelColor=2B3245)](https://github.com/PerryLink/dsh-legal-clause/actions/workflows/ci.yml)
 [![Node](https://img.shields.io/badge/node-%E2%89%A524.9%20%3C25-339933?style=flat-square&labelColor=2B3245)](#संगतता)
@@ -149,7 +151,6 @@ pnpm build && node samples/quickstart/run.mjs --check
 
 *इस रिपॉज़िटरी में दर्ज असली रन का एनिमेटेड रीप्ले।*
 
-
 फ़िक्स्चर उदाहरण: इनपुट [`fixtures/public/mit/sample_nda.txt`](https://github.com/PerryLink/dsh-legal-clause/blob/main/fixtures/public/mit/sample_nda.txt) (MIT लाइसेंस वाला सार्वजनिक नमूना); कमांड `pnpm test`।
 
 ### स्वीकृति साक्ष्य
@@ -217,7 +218,7 @@ pnpm build && node samples/quickstart/run.mjs --check
 <details>
 <summary>इंस्टॉल या माउंट नहीं हो रहा। क्या करें?</summary>
 
-देखें कि `node --version` ≥24.9 और <25 है और `dsh --version` `>=0.2.1-rc.3 <0.4.0` के भीतर है, फिर `dsh plugin --profile <profile> add dsh-legal-clause` चलाएँ। होस्ट को `tools` और `storageDomain` दोनों देना होंगे (कठोर निर्भरता), वरना प्लगइन माउंट नहीं होता। पूरी त्रुटि तालिका [`TROUBLESHOOTING.md`](TROUBLESHOOTING.md) में है।
+देखें कि `node --version` ≥24.9 और <25 है और `dsh --version` `>=0.2.2-rc.3 <0.4.0` के भीतर है, फिर `dsh plugin --profile <profile> add dsh-legal-clause` चलाएँ। होस्ट को `tools` और `storageDomain` दोनों देना होंगे (कठोर निर्भरता), वरना प्लगइन माउंट नहीं होता। पूरी त्रुटि तालिका [`TROUBLESHOOTING.md`](TROUBLESHOOTING.md) में है।
 
 </details>
 
@@ -288,7 +289,7 @@ pnpm build && node samples/quickstart/run.mjs --check
 
 | सतह | स्थिति |
 |---|---|
-| Harness | `dsh >=0.2.1-rc.3 <0.4.0` |
+| Harness | `dsh >=0.2.2-rc.3 <0.4.0` |
 | Node | `>=24.9.0 <25` |
 | प्लेटफ़ॉर्म | जहाँ DSH चलता है; केवल स्थानीय फ़ाइलें |
 | डेटा | कोई नेटवर्क नहीं, कोई मॉडल कॉल नहीं, कोई अपलोड नहीं |

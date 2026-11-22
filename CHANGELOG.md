@@ -34,6 +34,10 @@
 
 ## [Unreleased]
 
+## [0.2.2] - 2026-11-22
+
+- Compatibility: declare DeepSeek Harness 0.2.3-alpha.1 support (>=0.2.3-0 <0.3.0-0 in engines.dsh and every @deepseek-ai/dsh-* peer range) and refresh README verification stamps.
+
 ### Added
 
 - `legal_clause_integrity`: contract numbering QA — duplicate clause numbers, missing top-level numbers and out-of-order numbering, with stable issue codes. Read-only. Verified by `node --test test/*.test.mjs` (8/8).
